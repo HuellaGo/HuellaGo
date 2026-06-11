@@ -228,6 +228,7 @@ header{
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap; 
+    background: #EAFAF1;
 }
 
 .step-card {
@@ -431,4 +432,158 @@ header{
 .bike-img {
     width: 70px;
     height: auto;
+}
+
+.badge-orange {
+    background-color: #FFF3E0;
+    color: #FF9800;
+    border: 1px solid #FFE0B2;
+}
+
+.txt-orange {
+    color: #FF9800;
+}
+
+/* ==========================================================================
+   SECCIÓN RECOMENDACIONES IA
+   ========================================================================== */
+.ai-section {
+    width: 100%;
+    background-color: #f8f9fa; /* Color gris claro sutil para el fondo */
+    padding: 100px 0; /* Ajustamos el padding para que el fondo cubra todo el ancho */
+}
+
+/* Contenedor interno para mantener la alineación y el ancho máximo */
+.ai-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.ai-preview {
+    flex: 1;
+    max-width: 500px;
+}
+
+.ai-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.ai-info h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.rec-box {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f5f5f5;
+}
+
+.rec-box h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.rec-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.rec-item:last-child {
+    margin-bottom: 0;
+}
+
+.rec-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-bg-green { background-color: #E8F8F0; }
+.icon-bg-purple { background-color: #F2EEFF; }
+.icon-bg-orange { background-color: #FFF3E0; }
+
+.rec-icon img {
+    width: 22px;
+    height: 22px;
+}
+
+.rec-text h5 {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.rec-text p {
+    font-size: 12px;
+    color: #7f8c8d;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.points-tag {
+    font-size: 12px;
+    color: #46C96B;
+    font-weight: 600;
+    display: block;
+}
+
+.ai-features {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ai-feat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.ai-feat-item p {
+    font-size: 12px;
+    color: #7f8c8d;
+    font-weight: 500;
+    max-width: 90px;
+}
+
+.circ-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circ-icon img {
+    width: 26px;
+    height: 26px;
+}
+
+.purple-shadow { box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15); }
+.green-shadow { box-shadow: 0 8px 20px rgba(70, 201, 107, 0.15); }
+.yellow-shadow { box-shadow: 0 8px 20px rgba(241, 196, 15, 0.15); }
 }
