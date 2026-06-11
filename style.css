@@ -449,11 +449,11 @@ header{
    ========================================================================== */
 .ai-section {
     width: 100%;
-    background-color: #f8f9fa; /* Color gris claro sutil para el fondo */
-    padding: 100px 0; /* Ajustamos el padding para que el fondo cubra todo el ancho */
+    background-color: #f8f9fa; 
+    padding: 100px 0;
 }
 
-/* Contenedor interno para mantener la alineación y el ancho máximo */
+
 .ai-section .container {
     max-width: 1200px;
     margin: 0 auto;
