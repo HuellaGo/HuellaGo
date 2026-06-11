@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header{
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* ==========================================================================
+   SECCIÓN NAV
+   ========================================================================== */
+
+.nav-bar{
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+}
+
+.logo span{
+    font-size: 18px;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.indice{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+}
+
+.indice a{
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.indice a:hover{
+    color: #4CAF50;
+}
+
+.nav-btn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-login{
+    text-decoration: none;
+    background: #F2EEFF;
+    color: #666;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-registro{
+    text-decoration: none;
+    background: #46C96B;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
