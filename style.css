@@ -453,7 +453,6 @@ header{
     padding: 100px 0;
 }
 
-
 .ai-section .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -585,4 +584,3 @@ header{
 
 .purple-shadow { box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15); }
 .green-shadow { box-shadow: 0 8px 20px rgba(70, 201, 107, 0.15); }
-.yellow-shadow { box-shadow: 0 8px 20px rgba(241, 196, 15, 0.15); }
