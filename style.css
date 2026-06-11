@@ -648,7 +648,6 @@ header{
     margin-bottom: 0;
 }
 
-/* Estructura Nivel */
 .level-header {
     display: flex;
     align-items: center;
@@ -1011,4 +1010,57 @@ header{
 .building-illustration img {
     max-width: 100%;
     height: auto;
+}
+
+.main-footer {
+    width: 100%;
+    background-color: #1E824C; 
+    padding: 40px 0;
+    color: #ffffff;
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.footer-logo .logo-text {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
