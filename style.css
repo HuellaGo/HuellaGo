@@ -573,3 +573,174 @@ header{
 .purple-shadow { box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15); }
 .green-shadow { box-shadow: 0 8px 20px rgba(70, 201, 107, 0.15); }
 .yellow-shadow { box-shadow: 0 8px 20px rgba(241, 196, 15, 0.15); }
+
+.gamification-section {
+    width: 100%;
+    background-color: #ffffff; 
+    padding: 100px 0;
+}
+
+.gamification-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.gamification-info, .gamification-preview {
+    flex: 1;
+    max-width: 500px;
+}
+
+.badge-blue {
+    background-color: #E3F2FD;
+    color: #2196F3;
+    border: 1px solid #BBDEFB;
+}
+
+.txt-blue {
+    color: #2196F3;
+}
+
+.gamification-info h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.grid-checklist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.grid-checklist li {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.check-icon {
+    color: #46C96B;
+    font-weight: bold;
+}
+
+.level-card, .badges-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.badges-card {
+    margin-bottom: 0;
+}
+
+/* Estructura Nivel */
+.level-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.level-shield {
+    width: 45px;
+    height: 45px;
+    background-color: #E8F8F0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.level-shield img {
+    width: 24px;
+    height: 24px;
+}
+
+.level-title h4 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.progress-bar-bg {
+    flex: 1;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #2196F3;
+    border-radius: 4px;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #7f8c8d;
+    white-space: nowrap;
+}
+
+.badges-card h5 {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.badges-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.badge-icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-badge {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+}
+
+.locked-badge {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    opacity: 0.6;
+}
+
+.badge-icon-circle img {
+    width: 22px;
+    height: 22px;
+}
