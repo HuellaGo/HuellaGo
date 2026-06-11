@@ -266,3 +266,171 @@ header{
     line-height: 1.5;
     max-width: 180px;
 }
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.badge-green {
+    background-color: #E8F8F0;
+    color: #46C96B;
+    border: 1px solid #c2ebd0;
+}
+
+.section-desc {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.dashboard-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.dashboard-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.dashboard-info h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.checkmark-list {
+    list-style: none;
+}
+
+.checkmark-list li {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.check {
+    color: #46C96B;
+    font-weight: bold;
+}
+
+/* Grilla de Tarjetas */
+.dashboard-preview {
+    flex: 1.2;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.dash-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+}
+
+.dash-card h4 {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.big-stat {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.circle-progress img {
+    width: 60px;
+    height: 60px;
+}
+
+.graph-img {
+    width: 100%;
+    height: auto;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #46C96B;
+    border-radius: 10px;
+}
+
+.sub-stat {
+    font-size: 11px;
+    color: #95a5a6;
+}
+
+.dash-card h5 {
+    font-size: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.card-desc {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+}
+
+.fraction-stat {
+    font-size: 12px;
+    color: #46C96B;
+    font-weight: 600;
+}
+
+.bike-img {
+    width: 70px;
+    height: auto;
+}
+
+.badge-orange {
+    background-color: #FFF3E0;
+    color: #FF9800;
+    border: 1px solid #FFE0B2;
+}
+
+.txt-orange {
+    color: #FF9800;
+}
