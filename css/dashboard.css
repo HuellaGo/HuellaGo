@@ -800,3 +800,14 @@ body{
 
     font-size:28px;
 }
+
+.institution-cell{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.institution-icon{
+    width: 34px;
+    height: 34px;
+}
