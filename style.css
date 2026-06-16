@@ -572,8 +572,8 @@ header{
 }
 
 .circ-icon img {
-    width: 26px;
-    height: 26px;
+    width: 70px;
+    height: 70px;
 }
 
 .purple-shadow { box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15); }
@@ -1118,4 +1118,162 @@ header{
     .cta-section p {
         font-size: 16px;
     }
+}
+/* ==========================================
+   MENU HAMBURGUESA
+========================================== */
+
+.hamburger{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.hamburger img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px){
+
+    .nav-bar{
+        padding:0 20px;
+        position:relative;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .indice{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        gap:0;
+        box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        z-index:999;
+    }
+
+    .indice.active{
+        display:flex;
+    }
+
+    .indice li{
+        width:100%;
+        text-align:center;
+        border-bottom:1px solid #eee;
+    }
+
+    .indice a{
+        display:block;
+        padding:18px;
+    }
+
+    .hero-section,
+    .dashboard-section,
+    .ai-section .container,
+    .gamification-section .container,
+    .ranking-section .container,
+    .institutions-section .container{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+    }
+
+    .dashboard-info h2,
+    .ai-info h2,
+    .gamification-info h2,
+    .ranking-info h2,
+    .institutions-info h2{
+        font-size:28px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-stats{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .dashboard-preview{
+        grid-template-columns:1fr;
+        width:100%;
+    }
+
+    .grid-checklist{
+        grid-template-columns:1fr;
+    }
+
+    .ranking-illustration{
+        justify-content:center;
+    }
+
+    .ranking-illustration img{
+        max-width:100%;
+    }
+
+    .building-illustration{
+        justify-content:center;
+    }
+
+    .footer-nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .main-footer .container{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .cta-section h2{
+        font-size:30px;
+    }
+
+    .cta-section p{
+        font-size:16px;
+    }
+    .mobile-only{
+    display:block;
+    }
+
+    .mobile-login{
+        font-weight:600;
+        color:#555;
+    }
+
+    .mobile-register{
+        display:block;
+        margin:15px;
+        background:#46C96B;
+        color:white !important;
+        border-radius:8px;
+    }
+    .mobile-only{
+    display:block!important;
+}
+}
+.mobile-only{
+    display:none;
 }

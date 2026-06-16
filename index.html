@@ -6,6 +6,8 @@
     <title>HuellaGo</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+
 </head>
 
 <body>
@@ -14,7 +16,6 @@
         <nav class="nav-bar">
 
             
-            
             <div class="logo">
                 <img src="imagenes/logo.png" alt="Logo HuellaGo">
                 <span>HuellaGo</span>
@@ -22,10 +23,17 @@
 
             
            
-            <ul class="indice">
+            <ul class="indice" id="mobileMenu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#funciona">Como Funciona</a></li>
                 <li><a href="#instituciones">Instituciones</a></li>
+                <li class="mobile-only">
+                    <a href="#" class="mobile-login">Iniciar Sesión</a>
+                </li>
+
+                <li class="mobile-only">
+                    <a href="#" class="mobile-register">Registrarse</a>
+                </li>
             </ul>
 
             
@@ -34,7 +42,9 @@
                 <a href="#" class="btn-login">Iniciar Sesión</a>
                 <a href="#" class="btn-registro">Registrarse</a>
             </div>
-
+            <button class="hamburger" onclick="toggleMenu()">
+            <img src="imagenes/menu.png" alt="Menu">
+            </button>
         </nav>
         
     </header>
@@ -224,7 +234,7 @@
                     <div class="ai-features">
                         <div class="ai-feat-item">
                             <div class="circ-icon purple-shadow">
-                                <img src="imagenes/" alt="Insights">
+                                <img src="imagenes/Insights.png" alt="Insights">
                             </div>
                             <p>Insights inteligentes</p>
                         </div>
