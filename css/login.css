@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f8faf8;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.auth-container{
+    width:100%;
+    max-width:1200px;
+}
+
+.auth-card{
+    display:flex;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.auth-form{
+    flex:1;
+    padding:60px;
+}
+
+/* Flecha volver */
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#F4F7F5;
+    margin-bottom:25px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#E8F8EC;
+}
+
+.back-btn img{
+    width:28px;
+    height:28px;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+.back-btn:hover img{
+    transform:translateX(-3px);
+}
+
+/* Títulos */
+
+.auth-form h1{
+    font-size:42px;
+    color:#243B53;
+    margin-bottom:10px;
+}
+
+.auth-form p{
+    color:#6B7280;
+    margin-bottom:30px;
+}
+
+/* Formulario */
+
+.auth-form form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.auth-form input{
+    width:100%;
+    padding:15px;
+    border:1px solid #D9D9D9;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+.auth-form input:focus{
+    border-color:#46C96B;
+}
+
+/* Olvidé contraseña */
+
+.forgot{
+    text-align:right;
+    color:#F59E0B;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.forgot:hover{
+    text-decoration:underline;
+}
+
+/* Botón principal */
+
+.btn-primary{
+    background:#46C96B;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-primary:hover{
+    background:#38B85C;
+}
+
+/* Separador */
+
+.divider{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:25px 0;
+    color:#888;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#ddd;
+}
+
+/* Botones sociales */
+
+.btn-google,
+.btn-microsoft{
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+    border:1px solid #D9D9D9;
+    border-radius:10px;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-google:hover,
+.btn-microsoft:hover{
+    background:#f8f8f8;
+}
+
+/* Link inferior */
+
+.bottom-link{
+    text-align:center;
+    margin-top:20px;
+}
+
+.bottom-link a{
+    color:#46C96B;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.bottom-link a:hover{
+    text-decoration:underline;
+}
+
+/* Imagen lateral */
+
+.auth-image{
+    flex:1;
+    background:#EEF8F0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.auth-image img{
+    width:100%;
+    max-width:520px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .auth-card{
+        flex-direction:column;
+    }
+
+    .auth-image{
+        display:none;
+    }
+
+    .auth-form{
+        padding:35px;
+    }
+
+    .auth-form h1{
+        font-size:32px;
+    }
+}
