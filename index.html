@@ -6,6 +6,8 @@
     <title>HuellaGo</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+
 </head>
 
 <body>
@@ -14,7 +16,6 @@
         <nav class="nav-bar">
 
             
-            
             <div class="logo">
                 <img src="imagenes/logo.png" alt="Logo HuellaGo">
                 <span>HuellaGo</span>
@@ -22,10 +23,17 @@
 
             
            
-            <ul class="indice">
+            <ul class="indice" id="mobileMenu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#funciona">Como Funciona</a></li>
                 <li><a href="#instituciones">Instituciones</a></li>
+                <li class="mobile-only">
+                    <a href="#" class="mobile-login">Iniciar Sesión</a>
+                </li>
+
+                <li class="mobile-only">
+                    <a href="#" class="mobile-register">Registrarse</a>
+                </li>
             </ul>
 
             
@@ -34,7 +42,9 @@
                 <a href="#" class="btn-login">Iniciar Sesión</a>
                 <a href="#" class="btn-registro">Registrarse</a>
             </div>
-
+            <button class="hamburger" onclick="toggleMenu()">
+            <img src="imagenes/menu.png" alt="Menu">
+            </button>
         </nav>
         
     </header>
@@ -147,7 +157,7 @@
                 <div class="dash-card">
                     <h4>Evolución de tu huella</h4>
                     <div class="card-body">
-                        <img src="imagenes/Grafico_evolucion.png" alt="Gráfico de evolución" class="graph-img">
+                        <img src="imagenes/EvolucionHuella.png" alt="Gráfico de evolución" class="graph-img">
                     </div>
                 </div>
 
@@ -287,12 +297,12 @@
                     <div class="badges-card">
                         <h5>Insights desbloqueados</h5>
                         <div class="badges-grid">
-                            <div class="badge-icon-circle active-badge"><img src="imagenes/" alt="Insignia Hoja"></div>
-                            <div class="badge-icon-circle active-badge"><img src="imagenes/" alt="Insignia Reciclaje"></div>
-                            <div class="badge-icon-circle active-badge"><img src="imagenes/" alt="Insignia Trofeo"></div>
-                            <div class="badge-icon-circle active-badge"><img src="imagenes/" alt="Insignia Mundo"></div>
-                            <div class="badge-icon-circle active-badge"><img src="imagenes/" alt="Insignia Energía"></div>
-                            <div class="badge-icon-circle locked-badge"><img src="imagenes/" alt="Bloqueado"></div>
+                            <div class="badge-icon-circle active-badge"><img src="imagenes/Insignia Hoja.png" alt="Insignia Hoja"></div>
+                            <div class="badge-icon-circle active-badge"><img src="imagenes/Insignia reciclaje.png" alt="Insignia Reciclaje"></div>
+                            <div class="badge-icon-circle active-badge"><img src="imagenes/Insignia reciclaje.png" alt="Insignia Trofeo"></div>
+                            <div class="badge-icon-circle active-badge"><img src="imagenes/Insignia mundo.png" alt="Insignia Mundo"></div>
+                            <div class="badge-icon-circle active-badge"><img src="imagenes/Insignia energia.png" alt="Insignia Energía"></div>
+                            <div class="badge-icon-circle locked-badge"><img src="imagenes/Bloqueado.png" alt="Bloqueado"></div>
                         </div>
                     </div>
                 </div>
@@ -311,19 +321,19 @@
                         <div class="podium-container">
                             <div class="podium-place place-2">
                                 <div class="podium-avatar purple-bg">
-                                    <img src="imagenes/" alt="Puesto 2">
+                                    <img src="imagenes/Puesto 2.png" alt="Puesto 2">
                                     <span class="podium-number">2</span>
                                 </div>
                             </div>
                             <div class="podium-place place-1">
                                 <div class="podium-avatar green-bg">
-                                    <img src="imagenes/" alt="Puesto 1">
+                                    <img src="imagenes/Puesto 1.png" alt="Puesto 1">
                                     <span class="podium-number">1</span>
                                 </div>
                             </div>
                             <div class="podium-place place-3">
                                 <div class="podium-avatar blue-bg">
-                                    <img src="imagenes/" alt="Puesto 3">
+                                    <img src="imagenes/Puesto 3.png" alt="Puesto 3">
                                     <span class="podium-number">3</span>
                                 </div>
                             </div>
@@ -333,25 +343,25 @@
                         <div class="ranking-list">
                             <div class="ranking-item">
                                 <span class="rank-position">1</span>
-                                <div class="rank-icon-circle bg-light-green"><img src="imagenes/" alt="Icono 1"></div>
+                                <div class="rank-icon-circle bg-light-green"><img src="imagenes/personas1.png" alt="Icono 1"></div>
                                 <span class="rank-name">Universidad verde</span>
                                 <span class="rank-points">12.6k pts</span>
                             </div>
                             <div class="ranking-item">
                                 <span class="rank-position">2</span>
-                                <div class="rank-icon-circle bg-light-purple"><img src="imagenes/" alt="Icono 2"></div>
+                                <div class="rank-icon-circle bg-light-purple"><img src="imagenes/personas2.png" alt="Icono 2"></div>
                                 <span class="rank-name">Eco Warriors</span>
                                 <span class="rank-points">10.2k pts</span>
                             </div>
                             <div class="ranking-item">
                                 <span class="rank-position">3</span>
-                                <div class="rank-icon-circle bg-light-blue"><img src="imagenes/" alt="Icono 3"></div>
+                                <div class="rank-icon-circle bg-light-blue"><img src="imagenes/personas3.png" alt="Icono 3"></div>
                                 <span class="rank-name">Huella Warriors</span>
                                 <span class="rank-points">8.00k pts</span>
                             </div>
                             <div class="ranking-item">
                                 <span class="rank-position">4</span>
-                                <div class="rank-icon-circle bg-light-green-2"><img src="imagenes/" alt="Icono 4"></div>
+                                <div class="rank-icon-circle bg-light-green-2"><img src="imagenes/personas4.png" alt="Icono 4"></div>
                                 <span class="rank-name">Eco Héroe</span>
                                 <span class="rank-points">6.00k pts</span>
                             </div>
@@ -367,7 +377,7 @@
                     <p class="section-desc">Únete a una comunidad comprometida, participa en retos colectivos y compite por un futuro más sostenible.</p>
                     
                     <div class="ranking-illustration">
-                        <img src="imagenes/" alt="Comunidad cuidando el mundo">
+                        <img src="imagenes/Comunidad.png" alt="Comunidad cuidando el mundo">
                     </div>
                 </div>
 
@@ -394,7 +404,7 @@
                 
                 <div class="institutions-preview">
                     <div class="building-illustration">
-                        <img src="imagenes/" alt="Edificio institucional sostenible con paneles solares">
+                        <img src="imagenes/Institucional.png" alt="Edificio institucional sostenible con paneles solares">
                     </div>
                 </div>
 
@@ -413,7 +423,7 @@
             
             
             <div class="footer-logo">
-                <img src="imagenes/" alt="Logo HuellaGO">
+                <img src="imagenes/Logo.png" alt="Logo HuellaGO">
                 <span class="logo-text">HuellaGO</span>
             </div>
 
