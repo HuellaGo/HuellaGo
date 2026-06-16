@@ -51,12 +51,16 @@
 }
 
 .card{
-    background:white;
-    border-radius:20px;
+    background:#fff;
+    border-radius:24px;
     padding:24px;
-    box-shadow:0 3px 12px rgba(0,0,0,.04);
-}
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
 
+    max-width:1700px;
+    width:100%;
+    margin:0 auto 25px auto;
+
+}
 .card h3{
     margin-bottom:8px;
 }
@@ -238,44 +242,165 @@ tbody tr{
     }
 
 }
-/* MENU PERFIL */
 
-.user-profile{
-    position:relative;
-    cursor:pointer;
+/* =====================================
+   ACTUALIZAR HÁBITOS
+===================================== */
+
+.habit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+    width:100%;
 }
 
-.profile-menu{
-    position:absolute;
-    top:75px;
-    right:0;
-    background:white;
-    border-radius:16px;
-    box-shadow:0 6px 20px rgba(0,0,0,.08);
-    min-width:180px;
-    display:none;
-    flex-direction:column;
-    overflow:hidden;
-    z-index:1000;
-}
-
-.profile-menu a{
-    text-decoration:none;
-    color:#374151;
-    padding:14px 18px;
-    transition:.3s;
-}
-
-.profile-menu a:hover{
-    background:#edf9ef;
-    color:#169744;
-}
-
-.profile-menu.show{
+.input-group{
     display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
-/* MODAL DE CERRAR SESIÓN */
+.input-group label{
+    font-size:14px;
+    font-weight:600;
+    color:#374151;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    background:#fff;
+    color:#1f2937;
+    font-size:15px;
+    transition:all .3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+    outline:none;
+    border-color:#169744;
+    box-shadow:0 0 0 4px rgba(22,151,68,.15);
+}
+
+/* BOTÓN GUARDAR */
+
+.save-container{
+    max-width:1700px;
+    width:100%;
+    margin:40px auto 0 auto;
+
+    display:flex;
+    justify-content:center;
+}
+
+.save-container button{
+    padding:16px 36px;
+    border-radius:16px;
+    font-size:16px;
+    box-shadow:0 8px 20px rgba(22,151,68,.18);
+}
+
+/* =====================================
+   PANTALLA DE ÉXITO
+===================================== */
+
+.success-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#f5f7f5;
+    z-index:9999;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    gap:24px;
+    padding:40px;
+}
+
+.success-icon{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:#00d26a;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:65px;
+    font-weight:700;
+
+    box-shadow:0 12px 30px rgba(0,210,106,.25);
+}
+
+.success-screen h1{
+    font-size:50px;
+    color:#1f2937;
+    margin:0;
+}
+
+.success-screen p{
+    color:#6b7280;
+    font-size:18px;
+    line-height:1.8;
+    max-width:450px;
+}
+
+.success-screen .action-btn{
+    margin-top:10px;
+    padding:16px 40px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(22,151,68,.18);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:1000px){
+
+    .habit-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .habit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .save-container{
+        justify-content:center;
+    }
+
+    .success-icon{
+        width:110px;
+        height:110px;
+        font-size:55px;
+    }
+
+    .success-screen h1{
+        font-size:38px;
+    }
+
+    .success-screen p{
+        font-size:16px;
+    }
+
+
+
+}
+
+/* MODAL CERRAR SESIÓN */
 
 .logout-modal{
     display:none;
@@ -283,17 +408,16 @@ tbody tr{
     inset:0;
     background:rgba(0,0,0,.35);
     z-index:9999;
-
     justify-content:center;
     align-items:center;
 }
 
 .logout-modal-content{
     background:white;
-    padding:50px;
-    border-radius:30px;
     width:500px;
     max-width:90%;
+    padding:50px;
+    border-radius:30px;
 
     display:flex;
     flex-direction:column;
@@ -310,37 +434,33 @@ tbody tr{
     border-radius:50%;
     background:#00d26a;
     color:white;
+    font-size:60px;
+    font-weight:700;
 
     display:flex;
     justify-content:center;
     align-items:center;
-
-    font-size:60px;
-    font-weight:700;
 }
 
 .logout-modal-content h1{
-    color:#1f2937;
     margin:0;
+    color:#1f2937;
 }
 
 .logout-modal-content p{
     color:#6b7280;
-    line-height:1.8;
 }
 
 #confirmLogoutBtn{
     background:#00d26a;
-    color:#fff;
+    color:white;
     border:none;
-    border-radius:14px;
+    border-radius:16px;
     padding:16px 50px;
-    min-width:180px;
-    font-size:17px;
+    font-size:16px;
     font-weight:600;
     cursor:pointer;
-    box-shadow:0 10px 25px rgba(0,210,106,.2);
-    transition:all .3s ease;
+    transition:.3s;
 }
 
 #confirmLogoutBtn:hover{

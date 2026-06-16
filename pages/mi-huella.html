@@ -139,13 +139,13 @@
 
     <!-- LOGOUT -->
 
-    <div class="logout">
+    <div class="logout" id="logoutBtn">
 
         <div class="menu-icon">
             <img src="../icons/cerrar.png" alt="">
         </div>
 
-        <span class="sidebar-text">
+        <span class="sidebar-text" >
             Cerrar sesión
         </span>
 
@@ -172,7 +172,7 @@
 
             </div>
 
-            <div class="user-profile">
+            <div class="user-profile" id="profileBtn">
 
                 <div class="avatar">
 
@@ -199,7 +199,15 @@
                         src="../icons/flecha.png"
                         alt=""
                     >
-
+                </div>
+                <div class="profile-menu" id="profileMenu">
+                        <a href="mi-huella.html">
+                           Mi perfil
+                        </a>
+                        
+                        <a href="#" id="logoutMenuBtn">
+                            Cerrar sesión
+                        </a>
                 </div>
 
             </div>
@@ -210,7 +218,7 @@
 
     <!-- CONTENT -->
 
-    <div class="dashboard-content">
+    <div class="dashboard-content" id="formContainer">
 
         <!-- TITULO -->
 
@@ -226,7 +234,7 @@
 
             </div>
 
-            <button class="recalculate-btn">
+            <button class="recalculate-btn" id="recalculateBtn">
                 Recalcular Huella
             </button>
 
@@ -338,7 +346,7 @@
                         Modifica tu información actual sin recalcular toda tu huella.
                     </p>
 
-                    <button class="action-btn">
+                    <button class="action-btn" id="updateHabitsBtn">
                         Actualizar
                     </button>
 
@@ -352,7 +360,7 @@
                         Realiza una nueva medición completa utilizando el cuestionario.
                     </p>
 
-                    <button class="action-btn green">
+                    <button class="action-btn green" id="recalculateSmallBtn">
                         Recalcular
                     </button>
 
@@ -475,6 +483,30 @@
                 </button>
 
             </div>
+
+            <div class="logout-modal" id="logoutModal">
+
+           <div class="logout-modal-content">
+
+            <div class="logout-success-icon">
+               ✓
+            </div>
+
+            <h1>
+                  ¡Sesión cerrada!
+            </h1>
+
+            <p>
+                   Tu sesión se ha cerrado correctamente.
+            </p>
+
+            <button id="confirmLogoutBtn">
+                  Aceptar
+            </button>
+
+    </div>
+
+</div>
 
         </section>
 
