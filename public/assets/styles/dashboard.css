@@ -10,7 +10,7 @@
 }
 
 body{
-    background:#f5f7f5;
+    background:#f4f8f5;
     overflow-x:hidden;
 }
 
@@ -30,25 +30,20 @@ body{
 .sidebar{
     width:80px;
     height:100vh;
-
     position:fixed;
     left:0;
     top:0;
-
     background:#ffffff;
-
-    border-right:1px solid #ececec;
-
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-
     padding:20px 12px;
-
     transition:.35s ease;
     z-index:1000;
-
     overflow:hidden;
+    box-shadow:
+    4px 0 20px rgba(0,0,0,.04);
+    border-right:none;
 }
 
 .sidebar:hover{
@@ -346,20 +341,30 @@ body{
 
 .date-card{
 
-    background:white;
-
-    padding:12px 16px;
-
-    border-radius:14px;
-
-    display:flex;
+    display:inline-flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 
-    box-shadow:
-    0 2px 10px rgba(0,0,0,.05);
+    background:#fff;
+
+    padding:14px 20px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:16px;
+
+    width:fit-content;
+
+    margin-top:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
 }
-
+.date-card:hover{
+    border-color:#2ECC71;
+    box-shadow:0 6px 20px rgba(46,204,113,.15);
+}
 .date-card img{
     width:18px;
 }
@@ -397,7 +402,8 @@ body{
     align-items:flex-start;
 
     box-shadow:
-    0 3px 12px rgba(0,0,0,.04);
+    0 10px 30px rgba(0,0,0,.06);
+    border:1px solid #eef2f7;
 }
 
 .stat-icon{
@@ -516,7 +522,8 @@ body{
     text-align:center;
 
     box-shadow:
-    0 3px 12px rgba(0,0,0,.04);
+    0 10px 30px rgba(0,0,0,.06);
+    border:1px solid #eef2f7;
 }
 
 .bike-img{
@@ -599,11 +606,12 @@ body{
 @media(max-width:600px){
 
     .welcome h1{
-        font-size:30px;
+    font-size:42px;
+    line-height:1.1;
     }
 
 }
-.recalculate-btn{
+.recalculate-btn{   
 
     background:#2ECC71;
 
@@ -668,7 +676,8 @@ body{
     padding:24px;
 
     box-shadow:
-    0 3px 12px rgba(0,0,0,.04);
+    0 10px 30px rgba(0,0,0,.06);
+    border:1px solid #eef2f7;
 }
 
 .analytics-card h3{
