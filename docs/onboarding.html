@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuellaGo | Onboarding</title>
+
+    <link rel="stylesheet" href="assets/styles/onboarding.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-panel">
+
+        <div class="header">
+
+            <div>
+                <h1>Bienvenido a HuellaGo</h1>
+                <p>Comencemos configurando tu perfil ecológico.</p>
+            </div>
+
+            <span class="step-badge" id="stepIndicator">
+                Paso 1 de 5
+            </span>
+
+        </div>
+
+        <div class="progress-wrapper">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- PASO 1 -->
+
+        <section class="step active">
+
+            <h2>¿Cuáles son tus objetivos ambientales?</h2>
+
+            <p class="subtitle">
+                Selecciona una o más metas.
+            </p>
+
+            <div class="cards-grid">
+
+                <div class="goal-card">
+                    <img src="assets/images/reciclaje.png">
+                    <span>Reducir residuos</span>
+                </div>
+
+                <div class="goal-card">
+                    <img src="assets/images/energia.png">
+                    <span>Ahorrar energía</span>
+                </div>
+
+                <div class="goal-card">
+                    <img src="assets/images/agua.png">
+                    <span>Ahorrar agua</span>
+                </div>
+
+                <div class="goal-card">
+                    <img src="assets/images/arbol.png">
+                    <span>Reforestar</span>
+                </div>
+
+                <div class="goal-card">
+                    <img src="assets/images/bike.png">
+                    <span>Transporte sostenible</span>
+                </div>
+
+                <div class="goal-card">
+                    <img src="assets/images/consumo.png">
+                    <span>Consumo responsable</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PASO 2 -->
+
+        <section class="step">
+
+            <h2>🚲 Transporte</h2>
+
+            <div class="field">
+                <label>Medio de transporte principal</label>
+                <select>
+                    <option>Seleccionar</option>
+                    <option>Bicicleta</option>
+                    <option>Bus</option>
+                    <option>Auto</option>
+                    <option>Moto</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Km recorridos por semana</label>
+                <input type="number" placeholder="Ej: 20">
+            </div>
+
+            <div class="field">
+                <label>Días por semana</label>
+                <select>
+                    <option>Seleccionar</option>
+                    <option>1 - 2</option>
+                    <option>3 - 4</option>
+                    <option>5 - 7</option>
+                </select>
+            </div>
+
+        </section>
+
+        <!-- PASO 3 -->
+
+        <section class="step">
+
+            <h2>⚡ Energía</h2>
+
+            <div class="field">
+                <label>Tipo de vivienda</label>
+                <select>
+                    <option>Seleccionar</option>
+                    <option>Casa</option>
+                    <option>Departamento</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Personas en el hogar</label>
+                <input type="number">
+            </div>
+
+            <div class="field">
+                <label>Fuente principal de energía</label>
+                <select>
+                    <option>Seleccionar</option>
+                    <option>Electricidad</option>
+                    <option>Gas</option>
+                    <option>Solar</option>
+                </select>
+            </div>
+
+        </section>
+
+        <!-- PASO 4 -->
+
+        <section class="step">
+
+            <h2>🍎 Alimentación y residuos</h2>
+
+            <div class="field">
+                <label>Tipo de alimentación</label>
+                <select>
+                    <option>Seleccionar</option>
+                    <option>Vegana</option>
+                    <option>Vegetariana</option>
+                    <option>Mixta</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Uso de plásticos</label>
+                <select>
+                    <option>Bajo</option>
+                    <option>Medio</option>
+                    <option>Alto</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>¿Reciclas actualmente?</label>
+
+                <div class="toggle-buttons">
+                    <button type="button">Sí</button>
+                    <button type="button">No</button>
+                </div>
+            </div>
+
+        </section>
+        <!-- PASO 5 - RESULTADO -->
+
+        <section class="step">
+
+            <div class="result-screen">
+
+                <h2>¡Tu huella inicial está lista!</h2>
+
+                <p class="result-subtitle">
+                    Este es tu impacto ambiental actual
+                </p>
+
+                <div class="footprint-circle">
+
+                    <div class="circle-content">
+
+                        <h1>2.45</h1>
+
+                        <span>tCO₂e</span>
+
+                    </div>
+
+                </div>
+
+                <div class="level-badge">
+                    Nivel: Moderado
+                </div>
+
+                <h3>Equivale a:</h3>
+
+                <div class="equivalents">
+
+                    <div class="eq-card">
+
+                        <img
+                            src="assets/images/arbol.png"
+                            alt="Árbol"
+                            class="eq-icon"
+                        >
+
+                        <strong>24</strong>
+
+                        <span>Árboles sembrados</span>
+
+                    </div>
+
+                    <div class="eq-card">
+
+                        <img
+                            src="assets/images/bike.png"
+                            alt="Bicicleta"
+                            class="eq-icon"
+                        >
+
+                        <strong>120</strong>
+
+                        <span>Km en bicicleta</span>
+
+                    </div>
+
+                    <div class="eq-card">
+
+                        <img
+                            src="assets/images/reciclaje.png"
+                            alt="Reciclaje"
+                            class="eq-icon"
+                        >
+
+                        <strong>18</strong>
+
+                        <span>Kg reciclados</span>
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="dashboardBtn"
+                    class="primary-btn dashboard-btn"
+                >
+                    Ir a mi Dashboard
+                </button>
+
+            </div>
+
+        </section>
+        <div class="navigation">
+
+            <button id="prevBtn" class="secondary-btn">
+                Anterior
+            </button>
+
+            <button id="nextBtn" class="primary-btn">
+                Siguiente
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="right-panel">
+
+        <img
+            src="assets/images/Bienvenido.png"
+            alt="HuellaGo"
+            class="hero-image"
+        >
+
+        <h2>Construye un futuro más sostenible</h2>
+
+        <p>
+            Descubre tu impacto ambiental,
+            establece metas ecológicas y recibe
+            recomendaciones personalizadas.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                🌳 Reforestación
+            </div>
+
+            <div class="feature">
+                ♻️ Reciclaje
+            </div>
+
+            <div class="feature">
+                ⚡ Energía limpia
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="assets/scripts/onboarding.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - HuellaGo</title>
+
+    <link rel="stylesheet" href="assets/styles/login.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-form">
+
+            <a href="index.html" class="back-btn">
+                <img src="assets/images/Flecha.png" alt="Volver">
+            </a>
+
+            <h1>Accede a tu cuenta</h1>
+
+            <p>
+                Inicia sesión para continuar
+            </p>
+
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Correo electrónico"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Contraseña"
+                    required
+                >
+
+                <a href="recover.html" class="forgot">
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn-primary"
+                >
+                    Iniciar Sesión
+                </button>
+
+            </form>
+
+            <div class="divider">
+                <span>o</span>
+            </div>
+
+            <button class="btn-google">
+                Continuar con Google
+            </button>
+
+            <button class="btn-microsoft">
+                Continuar con Microsoft
+            </button>
+
+            <p class="bottom-link">
+                ¿No tienes cuenta?
+                <a href="register.html">
+                    Regístrate aquí
+                </a>
+            </p>
+
+        </div>
+
+        <div class="auth-image">
+
+            <img
+                src="assets/images/Planeta.png"
+                alt="HuellaGo"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="assets/scripts/login.js"></script>
+
+</body>
+</html>

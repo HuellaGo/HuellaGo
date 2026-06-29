@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuellaGo Dashboard</title>
+
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/ranking.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div>
+
+                <!-- LOGO -->
+
+                <div class="logo">
+
+                    <div class="logo-img">
+
+                        <img src="assets/images/Logo.png" alt="HuellaGo">
+
+                    </div>
+
+                    <span class="sidebar-text">
+                        HuellaGo
+                    </span>
+
+                </div>
+
+                <!-- MENÚ -->
+
+                <nav class="nav-menu">
+
+                    <a href="dashboard.html" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/home.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Inicio
+                        </span>
+
+                    </a>
+
+                    <a href="mi-huella.html" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/huella.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Mi Huella
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/retos.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Retos
+                        </span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/recomendaciones.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Recomendaciones AI
+                        </span>
+                    </a>
+
+                    <a href="ranking.html" class="menu-item active">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/ranking.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Ranking
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/insignias.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Insignias
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/configuracion.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Configuración
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="menu-item">
+
+                        <div class="menu-icon">
+                            <img src="assets/icons/soporte.png" alt="">
+                        </div>
+
+                        <span class="sidebar-text">
+                            Ayuda y soporte
+                        </span>
+
+                    </a>
+
+                </nav>
+
+            </div>
+
+            <!-- LOGOUT -->
+
+            <div class="logout">
+
+                <div class="menu-icon">
+                    <img src="assets/icons/cerrar.png" alt="">
+                </div>
+
+                <span class="sidebar-text">
+                    Cerrar sesión
+                </span>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div class="header-right">
+
+                    <!-- CAMPANA -->
+
+                    <div class="notification-btn">
+
+                        <img src="assets/icons/campana.png" alt="Notificaciones">
+
+                    </div>
+
+                    <!-- PERFIL -->
+
+                    <div class="user-profile">
+
+                        <div class="avatar">
+
+                            <img src="assets/icons/user.png" alt="Usuario">
+
+                        </div>
+
+                        <div class="user-info">
+
+                            <h4>Mateo</h4>
+
+                            <span>
+                                Nivel 5 · Eco Heroe
+                            </span>
+
+                        </div>
+
+                        <div class="profile-arrow">
+
+                            <img src="assets/icons/flecha.png" alt="Abrir perfil">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- CONTENIDO -->
+            <div class="dashboard-content">
+                <div class="ranking-container">
+
+                    <section class="welcome">
+                        <div>
+                            <h1>Ranking comunitario</h1>
+
+                            <p>
+                                Compara tu impacto con otras instituciones.
+                            </p>
+
+                        </div>
+                    </section>
+
+
+                    <div class="ranking-filters">
+
+                        <button id="btn-semanal" class="filter-btn active-filter">
+                            Semanal
+                        </button>
+
+                        <button id="btn-mensual" class="filter-btn">
+                            Mensual
+                        </button>
+
+                        <button id="btn-anual" class="filter-btn">
+                            Anual
+                        </button>
+
+                    </div>
+
+
+                    <div class="ranking-grid">
+
+                        <!-- TOP 3 -->
+
+                        <div class="ranking-card">
+
+                            <h2>Top 3</h2>
+
+                            <div class="podium">
+
+                                <div class="podium-item second-place">
+
+                                    <img src="assets/images/top2.png" alt="Top 2" class="podium-icon">
+
+                                    <h3 id="top2-name">Eco Warriors</h3>
+                                    <span id="top2-points">10 230 pts</span>
+
+                                </div>
+
+
+                                <div class="podium-item winner">
+
+                                    <img src="assets/images/top1.png" class="podium-icon podium-icon-winner" alt="Top 1">
+
+                                    <h3 id="top1-name">Universidad Verde</h3>
+                                    <span id="top1-points">12 550 pts</span>
+
+                                    <div class="winner-badge">
+                                        🏆 Líder semanal
+                                    </div>
+
+                                </div>
+
+
+                                <div class="podium-item third-place">
+
+                                    <img src="assets/images/top3.png" alt="Top 3" class="podium-icon">
+
+                                    <h3 id="top3-name">Huella Warriors</h3>
+                                    <span id="top3-points">8 000 pts</span>
+
+                                </div>
+
+                            </div> <!-- cierre de podium -->
+                        </div> <!-- cierre del ranking-card Top 3 -->
+
+                        <!-- TABLA -->
+
+                        <div class="ranking-card">
+
+                            <h2>Ranking</h2>
+
+                            <table class="ranking-table">
+
+                                <tr>
+                                    <th>#</th>
+                                    <th>Institución</th>
+                                    <th>Puntos</th>
+                                </tr>
+
+                                <tr>
+                                    <td>1</td>
+
+                                    <td class="institution-cell">
+                                        <img src="assets/images/verdes1.png" alt="" class="institution-icon">
+                                        <span id="rank1-name">Universidad Verde</span>
+                                    </td>
+
+                                    <td id="rank1-points">12 550 pts</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>2</td>
+
+                                    <td class="institution-cell">
+                                        <img src="assets/images/verdes2.png" alt="" class="institution-icon">
+                                        <span id="rank2-name">Eco Warriors</span>
+                                    </td>
+
+                                    <td id="rank2-points">10 230 pts</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>3</td>
+
+                                    <td class="institution-cell">
+                                        <img src="assets/images/verdes1.png" alt="" class="institution-icon">
+                                        <span id="rank3-name">Huella Warriors</span>
+                                    </td>
+
+                                    <td id="rank3-points">8 000 pts</td>
+                                </tr>
+
+
+                                <tr class="user-row">
+                                    <td>4</td>
+
+                                    <td class="institution-cell">
+                                        <img src="assets/images/verdes2.png" alt="" class="institution-icon">
+                                        <span id="rank4-name">Eco Héroes</span>
+                                    </td>
+
+                                    <td id="rank4-points">6 000 pts</td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ranking-card position-card">
+
+                        <h2>Tu institución ocupa la posición</h2>
+
+                        <div class="position-number" id="position-number">
+                            #4
+                        </div>
+
+                        <p>de 128 instituciones</p>
+
+                        <span>
+                            ¡Sigue así, puedes subir más!
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <script>
+                    const semanal = document.getElementById("btn-semanal");
+                    const mensual = document.getElementById("btn-mensual");
+                    const anual = document.getElementById("btn-anual");
+
+                    function quitarActivos() {
+                        semanal.classList.remove("active-filter");
+                        mensual.classList.remove("active-filter");
+                        anual.classList.remove("active-filter");
+                    }
+
+                    semanal.addEventListener("click", () => {
+
+                        quitarActivos();
+                        semanal.classList.add("active-filter");
+
+                        // TOP 3
+                        document.getElementById("top1-name").textContent = "Universidad Verde";
+                        document.getElementById("top1-points").textContent = "12 550 pts";
+
+                        document.getElementById("top2-name").textContent = "Eco Warriors";
+                        document.getElementById("top2-points").textContent = "10 230 pts";
+
+                        document.getElementById("top3-name").textContent = "Huella Warriors";
+                        document.getElementById("top3-points").textContent = "8 000 pts";
+
+                        // TABLA
+                        document.getElementById("rank1-name").textContent = "Universidad Verde";
+                        document.getElementById("rank1-points").textContent = "12 550 pts";
+
+                        document.getElementById("rank2-name").textContent = "Eco Warriors";
+                        document.getElementById("rank2-points").textContent = "10 230 pts";
+
+                        document.getElementById("rank3-name").textContent = "Huella Warriors";
+                        document.getElementById("rank3-points").textContent = "8 000 pts";
+
+                        document.getElementById("rank4-name").textContent = "Eco Héroes";
+                        document.getElementById("rank4-points").textContent = "6 000 pts";
+
+                        // POSICIÓN
+                        document.getElementById("position-number").textContent = "#4";
+
+                    });
+                    mensual.addEventListener("click", () => {
+
+                        quitarActivos();
+                        mensual.classList.add("active-filter");
+
+                        // TOP 3
+                        document.getElementById("top1-name").textContent = "Eco Warriors";
+                        document.getElementById("top1-points").textContent = "45 000 pts";
+
+                        document.getElementById("top2-name").textContent = "Universidad Verde";
+                        document.getElementById("top2-points").textContent = "42 500 pts";
+
+                        document.getElementById("top3-name").textContent = "Huella Warriors";
+                        document.getElementById("top3-points").textContent = "40 000 pts";
+
+                        // TABLA
+                        document.getElementById("rank1-name").textContent = "Eco Warriors";
+                        document.getElementById("rank1-points").textContent = "45 000 pts";
+
+                        document.getElementById("rank2-name").textContent = "Universidad Verde";
+                        document.getElementById("rank2-points").textContent = "42 500 pts";
+
+                        document.getElementById("rank3-name").textContent = "Huella Warriors";
+                        document.getElementById("rank3-points").textContent = "40 000 pts";
+
+                        document.getElementById("rank4-name").textContent = "Eco Héroes";
+                        document.getElementById("rank4-points").textContent = "35 000 pts";
+
+                        // POSICIÓN
+                        document.getElementById("position-number").textContent = "#4";
+
+                    });
+                    anual.addEventListener("click", () => {
+
+                        quitarActivos();
+                        anual.classList.add("active-filter");
+
+                        // TOP 3
+                        document.getElementById("top1-name").textContent = "Universidad Verde";
+                        document.getElementById("top1-points").textContent = "120 000 pts";
+
+                        document.getElementById("top2-name").textContent = "Eco Warriors";
+                        document.getElementById("top2-points").textContent = "115 000 pts";
+
+                        document.getElementById("top3-name").textContent = "Huella Warriors";
+                        document.getElementById("top3-points").textContent = "110 000 pts";
+
+                        // TABLA
+                        document.getElementById("rank1-name").textContent = "Universidad Verde";
+                        document.getElementById("rank1-points").textContent = "120 000 pts";
+
+                        document.getElementById("rank2-name").textContent = "Eco Warriors";
+                        document.getElementById("rank2-points").textContent = "115 000 pts";
+
+                        document.getElementById("rank3-name").textContent = "Huella Warriors";
+                        document.getElementById("rank3-points").textContent = "110 000 pts";
+
+                        document.getElementById("rank4-name").textContent = "Eco Héroes";
+                        document.getElementById("rank4-points").textContent = "95 000 pts";
+
+                        // POSICIÓN
+                        document.getElementById("position-number").textContent = "#4";
+
+                    });
+                </script>
+</body>
+
+</html>
