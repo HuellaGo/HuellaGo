@@ -100,5 +100,7 @@ document.addEventListener("click", (e) => {
 
 });
 
+
+
 // Inicializar
 updateStep();

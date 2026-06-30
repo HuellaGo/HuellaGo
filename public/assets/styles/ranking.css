@@ -184,3 +184,83 @@
     font-weight: 600;
     margin-top: 15px;
 }
+
+/* TABLET */
+
+@media screen and (max-width:1024px){
+
+    .ranking-grid{
+        grid-template-columns:1fr;
+    }
+
+    .podium{
+        gap:25px;
+    }
+
+    .podium-icon{
+        width:110px;
+    }
+
+    .podium-icon-winner{
+        width:140px;
+    }
+
+}
+
+/* MOVIL */
+
+@media screen and (max-width:768px){
+
+    .ranking-filters{
+        flex-direction:column;
+    }
+
+    .filter-btn{
+        width:100%;
+    }
+
+    .ranking-card{
+        padding:20px;
+    }
+
+    .podium{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+
+    .winner{
+        transform:none;
+    }
+
+    .podium-icon{
+        width:90px;
+    }
+
+    .podium-icon-winner{
+        width:110px;
+    }
+
+    .position-number{
+        font-size:50px;
+    }
+
+    .ranking-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .institution-cell{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.institution-icon{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+}
+
+}

@@ -61,4 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    const exitModal = document.getElementById("exitModal");
+    const confirmExitBtn = document.getElementById("confirmExitBtn");
+    const cancelExitBtn = document.getElementById("cancelExitBtn");
+
+    backBtn.addEventListener("click", () => {
+
+    exitModal.style.display = "flex";
+
+    });
+
+    cancelExitBtn.addEventListener("click", () => {
+
+    exitModal.style.display = "none";
+
+    });
+
+    confirmExitBtn.addEventListener("click", () => {
+
+    window.location.href = "mi-huella.html";
+
+});
 });
