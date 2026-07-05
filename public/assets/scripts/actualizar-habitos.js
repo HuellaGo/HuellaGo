@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    precargarHabitos();
+
     // GUARDAR CAMBIOS
 
     const saveHabitsBtn = document.getElementById("saveHabitsBtn");
 
     saveHabitsBtn.addEventListener("click", () => {
+
+        const habitos = recopilarHabitosForm();
+
+        guardarMedicion(habitos);
 
         document.getElementById("mainContainer").style.display = "none";
 
@@ -61,25 +67,99 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // MODAL "SALIR SIN GUARDAR"
+    // (antes fallaba porque backBtn nunca se declaraba con getElementById)
+
+    const backBtn = document.getElementById("backBtn");
     const exitModal = document.getElementById("exitModal");
     const confirmExitBtn = document.getElementById("confirmExitBtn");
     const cancelExitBtn = document.getElementById("cancelExitBtn");
 
     backBtn.addEventListener("click", () => {
 
-    exitModal.style.display = "flex";
+        exitModal.style.display = "flex";
 
     });
 
     cancelExitBtn.addEventListener("click", () => {
 
-    exitModal.style.display = "none";
+        exitModal.style.display = "none";
 
     });
 
     confirmExitBtn.addEventListener("click", () => {
 
-    window.location.href = "mi-huella.html";
+        window.location.href = "mi-huella.html";
+
+    });
 
 });
-});
+
+// Rellena el formulario con los hábitos guardados (si existen)
+
+function precargarHabitos() {
+
+    const data = obtenerDatosHuella();
+
+    if (!data || !data.habitos) return;
+
+    const h = data.habitos;
+
+    if (h.transporte) {
+        setSelectValue("habMedio", h.transporte.medio);
+        document.getElementById("habKm").value = h.transporte.kmSemana || "";
+        setSelectValue("habDias", h.transporte.diasSemana);
+    }
+
+    if (h.energia) {
+        setSelectValue("habVivienda", h.energia.vivienda);
+        document.getElementById("habPersonas").value = h.energia.personas || "";
+        setSelectValue("habFuente", h.energia.fuente);
+    }
+
+    if (h.alimentacion) {
+        setSelectValue("habDieta", h.alimentacion.tipo);
+    }
+
+    if (h.residuos) {
+        setSelectValue("habPlasticos", h.residuos.plasticos);
+        setSelectValue("habRecicla", h.residuos.reciclas ? "Sí" : "No");
+    }
+
+}
+
+function setSelectValue(id, valor) {
+
+    const select = document.getElementById(id);
+    if (!select || !valor) return;
+
+    const opcion = Array.from(select.options).find(o => o.value === valor);
+    if (opcion) select.value = valor;
+
+}
+
+// Lee los valores actuales del formulario
+
+function recopilarHabitosForm() {
+
+    return {
+        transporte: {
+            medio: document.getElementById("habMedio").value,
+            kmSemana: document.getElementById("habKm").value,
+            diasSemana: document.getElementById("habDias").value
+        },
+        energia: {
+            vivienda: document.getElementById("habVivienda").value,
+            personas: document.getElementById("habPersonas").value,
+            fuente: document.getElementById("habFuente").value
+        },
+        alimentacion: {
+            tipo: document.getElementById("habDieta").value
+        },
+        residuos: {
+            plasticos: document.getElementById("habPlasticos").value,
+            reciclas: document.getElementById("habRecicla").value === "Sí"
+        }
+    };
+
+}

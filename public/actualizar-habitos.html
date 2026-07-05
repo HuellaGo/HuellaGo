@@ -11,6 +11,8 @@
 <title>Actualizar Hábitos | HuellaGo</title>
 <link rel="stylesheet" href="assets/styles/dashboard.css">
 <link rel="stylesheet" href="assets/styles/actualizar-habitos.css">
+<link rel="stylesheet" href="assets/styles/sidebar.css">
+<link rel="stylesheet" href="assets/styles/navbar.css">
 
 
 </head>
@@ -249,11 +251,12 @@
 
                 <label>Medio principal</label>
 
-                <select>
+                <select id="habMedio">
 
                     <option>Bicicleta</option>
                     <option>Auto</option>
                     <option>Bus</option>
+                    <option>Moto</option>
                     <option>Caminando</option>
 
                 </select>
@@ -266,7 +269,9 @@
 
                 <input
                     type="number"
+                    id="habKm"
                     placeholder="15"
+                    min="0"
                 >
 
             </div>
@@ -275,7 +280,7 @@
 
                 <label>Días por semana</label>
 
-                <select>
+                <select id="habDias">
 
                     <option>1</option>
                     <option>2</option>
@@ -303,10 +308,10 @@
 
                 <label>Tipo de vivienda</label>
 
-                <select>
+                <select id="habVivienda">
 
                     <option>Casa</option>
-                    <option>Apartamento</option>
+                    <option>Departamento</option>
 
                 </select>
 
@@ -318,7 +323,9 @@
 
                 <input
                     type="number"
+                    id="habPersonas"
                     placeholder="3"
+                    min="1"
                 >
 
             </div>
@@ -327,10 +334,11 @@
 
                 <label>Fuente principal</label>
 
-                <select>
+                <select id="habFuente">
 
                     <option>Electricidad</option>
                     <option>Gas</option>
+                    <option>Solar</option>
 
                 </select>
 
@@ -352,9 +360,9 @@
 
                 <label>Tipo de alimentación</label>
 
-                <select>
+                <select id="habDieta">
 
-                    <option>Omnívora</option>
+                    <option>Mixta</option>
                     <option>Vegetariana</option>
                     <option>Vegana</option>
 
@@ -378,7 +386,7 @@
 
                 <label>Uso de plásticos</label>
 
-                <select>
+                <select id="habPlasticos">
 
                     <option>Bajo</option>
                     <option>Medio</option>
@@ -392,7 +400,7 @@
 
                 <label>¿Reciclas en casa?</label>
 
-                <select>
+                <select id="habRecicla">
 
                     <option>Sí</option>
                     <option>No</option>
@@ -504,8 +512,9 @@
 
     </div>
 
+       <script src="assets/scripts/huella-data.js"></script>
        <script src="assets/scripts/actualizar-habitos.js"></script>
 
     </body>
 
-</html> 
+</html>

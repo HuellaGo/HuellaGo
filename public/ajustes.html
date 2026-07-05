@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ajustes | HuellaGo</title>
+
+<link rel="stylesheet" href="assets/styles/perfil.css">
+
+</head>
+
+<body class="profile-body" data-page="ajustes">
+
+<div class="profile-page">
+
+    <!-- TOPBAR -->
+    <header class="profile-topbar">
+
+        <a class="icon-btn" href="mi-perfil.html" aria-label="Volver">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </a>
+
+        <h1>Ajustes</h1>
+
+    </header>
+
+    <!-- CUENTA -->
+    <p class="settings-section-label">Cuenta</p>
+
+    <div class="settings-list">
+
+        <button class="settings-row" id="editarInfoRow" type="button">
+            <span class="row-label">Editar información personal</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <button class="settings-row" id="cambiarPasswordRow" type="button">
+            <span class="row-label">Cambiar contraseña</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <button class="settings-row" id="correoRow" type="button">
+            <span class="row-label">Correo electrónico</span>
+            <span class="row-value" id="correoValue">mateo@gmail.com</span>
+        </button>
+
+        <button class="settings-row danger" id="eliminarCuentaRow" type="button">
+            <span class="row-label">Eliminar cuenta</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#ef4444">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- PREFERENCIAS -->
+    <p class="settings-section-label">Preferencias</p>
+
+    <div class="settings-list">
+
+        <div class="settings-row" id="notificacionesRow">
+            <span class="row-label">Notificaciones</span>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <span class="row-value" id="notifStatusText">Activadas</span>
+                <label class="switch">
+                    <input type="checkbox" id="notifToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button class="settings-row" id="privacidadRow" type="button">
+            <span class="row-label">Privacidad</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <button class="settings-row" id="idiomaRow" type="button">
+            <span class="row-label">Idioma</span>
+            <span class="row-value" id="idiomaValue">Español</span>
+        </button>
+
+        <button class="settings-row" id="temaRow" type="button">
+            <span class="row-label">Tema</span>
+            <span class="row-value" id="temaValue">Claro</span>
+        </button>
+
+        <button class="settings-row" id="unidadesRow" type="button">
+            <span class="row-label">Unidades de medida</span>
+            <span class="row-value" id="unidadesValue">km/h, kg</span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MODAL / BOTTOM SHEET (contenido inyectado por perfil.js) -->
+<div class="modal-overlay" id="modalOverlay"></div>
+
+<script src="assets/scripts/perfil.js"></script>
+
+</body>
+</html>

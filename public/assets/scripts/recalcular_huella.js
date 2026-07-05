@@ -7,6 +7,7 @@ const progressBar = document.getElementById("progressBar");
 const stepIndicator = document.getElementById("stepIndicator");
 
 let currentStep = 0;
+let reciclaSeleccion = true; // por defecto "Sí", igual que el botón activo inicial
 
 function updateStep() {
 
@@ -58,8 +59,14 @@ nextBtn.addEventListener("click", () => {
 
     if (currentStep < steps.length - 1) {
 
+        const vaAlResultado = currentStep === steps.length - 2;
+
         currentStep++;
         updateStep();
+
+        if (vaAlResultado) {
+            mostrarResultado();
+        }
 
     }
 
@@ -89,18 +96,80 @@ document.querySelectorAll(".goal-card")
 
 });
 
+// TOGGLE "¿RECICLAS?"
+document.querySelectorAll("#recicleToggle button").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        document.querySelectorAll("#recicleToggle button")
+            .forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        reciclaSeleccion = btn.getAttribute("data-valor") === "si";
+
+    });
+
+});
+
 // BOTÓN DASHBOARD DEL PASO 5
 document.addEventListener("click", (e) => {
 
     if (e.target.id === "dashboardBtn") {
 
-        window.location.href = "dashboard.html";
+        window.location.href = "mi-huella.html";
 
     }
 
 });
 
+// ===== RECOPILAR RESPUESTAS Y CALCULAR =====
 
+function recopilarHabitos() {
+
+    const objetivos = Array.from(document.querySelectorAll(".goal-card.selected"))
+        .map(card => card.getAttribute("data-goal"));
+
+    return {
+        objetivos,
+        transporte: {
+            medio: document.getElementById("transporteMedio").value,
+            kmSemana: document.getElementById("transporteKm").value,
+            diasSemana: document.getElementById("transporteDias").value
+        },
+        energia: {
+            vivienda: document.getElementById("energiaVivienda").value,
+            personas: document.getElementById("energiaPersonas").value,
+            fuente: document.getElementById("energiaFuente").value
+        },
+        alimentacion: {
+            tipo: document.getElementById("alimentacionTipo").value
+        },
+        residuos: {
+            plasticos: document.getElementById("residuosPlasticos").value,
+            reciclas: reciclaSeleccion
+        }
+    };
+
+}
+
+function mostrarResultado() {
+
+    const habitos = recopilarHabitos();
+    const data = guardarMedicion(habitos);
+
+    const kg = data.historial[0].valor;
+    const nivel = obtenerNivelHuella(kg);
+
+    document.getElementById("resultCircleValue").textContent = kg;
+    document.getElementById("resultLevelBadge").textContent = `Nivel: ${nivel}`;
+
+    // Equivalencias ilustrativas (no científicas, solo para motivar visualmente)
+    document.getElementById("eqArboles").textContent = Math.max(1, Math.round(kg * 10));
+    document.getElementById("eqBici").textContent = Math.max(1, Math.round(kg * 50));
+    document.getElementById("eqReciclaje").textContent = Math.max(1, Math.round(kg * 7));
+
+}
 
 // Inicializar
 updateStep();

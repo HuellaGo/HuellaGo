@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Retos | HuellaGo</title>
+
+<link rel="stylesheet" href="assets/styles/sidebar.css">
+<link rel="stylesheet" href="assets/styles/navbar.css">
+<link rel="stylesheet" href="assets/styles/dashboard.css">
+<link rel="stylesheet" href="assets/styles/retos.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+
+        <div id="navbar-container"></div>
+
+        <div class="dashboard-content">
+
+            <!-- HERO -->
+
+            <section class="welcome retos-hero">
+
+                <div class="retos-hero-info">
+
+                    <h1>Retos ecológicos</h1>
+
+                    <p>
+                        Participa en desafíos sostenibles, gana EcoPuntos, desbloquea insignias
+                        y contribuye a reducir tu huella de carbono.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- TOOLBAR -->
+
+            <section class="retos-toolbar" id="retosToolbar">
+
+                <div class="search-box">
+
+                    <img src="assets/icons/buscar.png" alt="">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar retos..."
+                    >
+
+                </div>
+
+                <div class="toolbar-actions">
+
+                    <button class="filter-btn">
+                        <img src="assets/icons/filtro.png" alt="">
+                        Filtro
+                        <img src="assets/icons/flecha.png" alt="" class="arrow-down">
+                    </button>
+
+                    <button class="sort-btn">
+                        <img src="assets/icons/ordenar.png" alt="">
+                        Ordenar
+                        <img src="assets/icons/flecha.png" alt="" class="arrow-down">
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- TABS -->
+
+            <section class="tabs">
+
+                <button class="tab active" data-tab="disponible">
+                    <img src="assets/icons/hoja.png" alt="">
+                    Disponibles
+                </button>
+
+                <button class="tab" data-tab="activo">
+                    <img src="assets/icons/reloj.png" alt="">
+                    Activos
+                </button>
+
+                <button class="tab" data-tab="completado">
+                    <img src="assets/icons/check-circulo.png" alt="">
+                    Completados
+                </button>
+
+                <button class="tab" data-tab="colectivos">
+                    <img src="assets/icons/usuarios.png" alt="">
+                    Colectivos
+                </button>
+
+            </section>
+
+            <!-- CARDS (retos individuales) -->
+
+            <section class="cards-grid" id="cardsContainer">
+
+                <article class="reto-card" data-estado="disponible" data-reto-id="bicicleta">
+
+                    <div class="reto-card-image">
+
+                        <img src="assets/images/usarbicicleta.png" alt="">
+
+                        <span class="difficulty easy">Fácil</span>
+
+                        <span class="points">
+                            +150
+                            <img src="assets/icons/hoja.png" alt="">
+                        </span>
+
+                    </div>
+
+                    <div class="reto-card-body">
+
+                        <h3>Usa bicicleta</h3>
+
+                        <p>Reduce emisiones utilizando la bicicleta durante la semana.</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+
+                        <div class="reto-card-footer">
+                            <span>2 / 3</span>
+                            <button class="ver-detalle-btn" data-reto-id="bicicleta">Ver detalle</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="reto-card" data-estado="disponible" data-reto-id="plastico">
+
+                    <div class="reto-card-image">
+
+                        <img src="assets/images/menosplastico.png" alt="">
+
+                        <span class="difficulty medium">Medio</span>
+
+                        <span class="points">
+                            +200
+                            <img src="assets/icons/hoja.png" alt="">
+                        </span>
+
+                    </div>
+
+                    <div class="reto-card-body">
+
+                        <h3>Menos plástico</h3>
+
+                        <p>Evita plásticos de un solo uso durante 7 días.</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 25%;"></div>
+                        </div>
+
+                        <div class="reto-card-footer">
+                            <span>1 / 7</span>
+                            <button class="ver-detalle-btn" data-reto-id="plastico">Ver detalle</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="reto-card" data-estado="disponible" data-reto-id="ducha">
+
+                    <div class="reto-card-image">
+
+                        <img src="assets/images/ducha.png" alt="">
+
+                        <span class="difficulty hard">Difícil</span>
+
+                        <span class="points">
+                            +250
+                            <img src="assets/icons/hoja.png" alt="">
+                        </span>
+
+                    </div>
+
+                    <div class="reto-card-body">
+
+                        <h3>Duchas conscientes</h3>
+
+                        <p>Toma duchas menores de cinco minutos durante una semana.</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 0%;"></div>
+                        </div>
+
+                        <div class="reto-card-footer">
+                            <span>0 / 7</span>
+                            <button class="ver-detalle-btn" data-reto-id="ducha">Ver detalle</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="reto-card" data-estado="disponible" data-reto-id="local">
+
+                    <div class="reto-card-image">
+
+                        <img src="assets/images/alimentacion.png" alt="">
+
+                        <span class="difficulty easy">Fácil</span>
+
+                        <span class="points">
+                            +120
+                            <img src="assets/icons/hoja.png" alt="">
+                        </span>
+
+                    </div>
+
+                    <div class="reto-card-body">
+
+                        <h3>Alimentación local</h3>
+
+                        <p>Consume productos locales y de temporada esta semana.</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 0%;"></div>
+                        </div>
+
+                        <div class="reto-card-footer">
+                            <span>0 / 5</span>
+                            <button class="ver-detalle-btn" data-reto-id="local">Ver detalle</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="reto-card" data-estado="disponible" data-reto-id="arbol">
+
+                    <div class="reto-card-image">
+
+                        <img src="assets/images/plantar.png" alt="">
+
+                        <span class="difficulty medium">Medio</span>
+
+                        <span class="points">
+                            +180
+                            <img src="assets/icons/hoja.png" alt="">
+                        </span>
+
+                    </div>
+
+                    <div class="reto-card-body">
+
+                        <h3>Planta un árbol</h3>
+
+                        <p>Planta un árbol o cuida una planta durante 7 días.</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 0%;"></div>
+                        </div>
+
+                        <div class="reto-card-footer">
+                            <span>0 / 7</span>
+                            <button class="ver-detalle-btn" data-reto-id="arbol">Ver detalle</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="reto-card" data-estado="disponible" data-reto-id="papel">
+
+                    <div class="reto-card-image">
+
+                        <img src="assets/images/oficina.png" alt="">
+
+                        <span class="difficulty hard">Difícil</span>
+
+                        <span class="points">
+                            +220
+                            <img src="assets/icons/hoja.png" alt="">
+                        </span>
+
+                    </div>
+
+                    <div class="reto-card-body">
+
+                        <h3>Oficina sin papel</h3>
+
+                        <p>Reduce el consumo de papel en tu trabajo durante una semana.</p>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 20%;"></div>
+                        </div>
+
+                        <div class="reto-card-footer">
+                            <span>1 / 7</span>
+                            <button class="ver-detalle-btn" data-reto-id="papel">Ver detalle</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- COLECTIVOS (HU43) -->
+
+            <section class="colectivos-container" id="colectivosContainer" style="display: none;">
+
+                <!-- INTRO PRIMERA VEZ -->
+
+                <div class="card colectivos-intro" id="colectivosIntro">
+
+                    <h3>👋 Bienvenido al espacio comunitario</h3>
+
+                    <p>
+                        Aquí puedes ver retos grupales en los que toda la comunidad HuellaGo participa junta,
+                        y la actividad reciente de otros miembros. ¡Suma tu progreso individual al esfuerzo colectivo!
+                    </p>
+
+                    <button class="action-btn green" id="btnCerrarIntro">Entendido</button>
+
+                </div>
+
+                <h3 class="colectivos-subtitulo">Retos grupales activos</h3>
+
+                <div class="colectivos-grid" id="colectivosGrid"></div>
+
+                <h3 class="colectivos-subtitulo">Actividad de la comunidad</h3>
+
+                <div class="card">
+                    <ul class="actividad-feed" id="actividadFeed"></ul>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="assets/scripts/components.js"></script>
+<script src="assets/scripts/huella-data.js"></script>
+<script src="assets/scripts/retos-data.js"></script>
+<script src="assets/scripts/comunidad-data.js"></script>
+<script src="assets/scripts/retos.js"></script>
+</body>
+</html>

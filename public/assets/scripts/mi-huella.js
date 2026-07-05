@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    pintarMiHuella();
+
     // ACTUALIZAR HÁBITOS
 
     const updateHabitsBtn = document.getElementById("updateHabitsBtn");
 
-    updateHabitsBtn.addEventListener("click", () => {
+    updateHabitsBtn?.addEventListener("click", () => {
         window.location.href = "actualizar-habitos.html";
     });
-
 
     // RECALCULAR HUELLA
 
@@ -18,90 +19,80 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "recalcular_huella.html";
     }
 
-    recalculateBtn.addEventListener("click", goToOnboarding);
-    recalculateSmallBtn.addEventListener("click", goToOnboarding);
+    recalculateBtn?.addEventListener("click", goToOnboarding);
+    recalculateSmallBtn?.addEventListener("click", goToOnboarding);
 
+});
 
-    // MODAL DE CERRAR SESIÓN
+function pintarMiHuella() {
 
-    const logoutBtn = document.getElementById("logoutBtn");
-    const logoutModal = document.getElementById("logoutModal");
-    const confirmLogoutBtn = document.getElementById("confirmLogoutBtn");
+    const data = obtenerDatosHuella();
 
-    logoutBtn.addEventListener("click", () => {
-        logoutModal.style.display = "flex";
-    });
+    const sinMedicion = document.getElementById("sinMedicionCard");
+    const contenido = document.getElementById("huellaContenido");
 
+    // Si el usuario todavía no ha hecho ninguna medición
 
-    // MENÚ DE PERFIL
+    if (!data || !data.historial || data.historial.length === 0) {
 
-    const profileBtn = document.getElementById("profileBtn");
-    const profileMenu = document.getElementById("profileMenu");
-    const logoutMenuBtn = document.getElementById("logoutMenuBtn");
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const sidebar = document.querySelector(".sidebar");
-    const sidebarOverlay = document.getElementById("sidebarOverlay");
+        if (sinMedicion) sinMedicion.style.display = "flex";
+        if (contenido) contenido.style.display = "none";
 
-    profileBtn.addEventListener("click", () => {
-        profileMenu.classList.toggle("show");
-    });
-
-    // MENU HAMBURGUESA
-
-    hamburgerBtn.addEventListener("click", () => {
-
-    sidebar.classList.toggle("active");
-    sidebarOverlay.classList.toggle("active");
-
-    });
-
-    sidebarOverlay.addEventListener("click", () => {
-
-    sidebar.classList.remove("active");
-    sidebarOverlay.classList.remove("active");
-
-    });
-
-    document.addEventListener("click", (e) => {
-
-    const clickEnSidebar = sidebar.contains(e.target);
-    const clickEnHamburger = hamburgerBtn.contains(e.target);
-
-    if (!clickEnSidebar && !clickEnHamburger) {
-
-        sidebar.classList.remove("active");
-        sidebarOverlay.classList.remove("active");
+        return;
 
     }
 
+    if (sinMedicion) sinMedicion.style.display = "none";
+    if (contenido) contenido.style.display = "block";
+
+    const ultima = data.historial[0];
+    const nivel = obtenerNivelHuella(ultima.valor);
+
+    // RESUMEN
+
+    document.getElementById("huellaValor").textContent = ultima.valor;
+    document.getElementById("huellaNivel").textContent = `Nivel ${nivel}`;
+    document.getElementById("huellaFecha").textContent =
+        `Actualizado el ${formatearFechaLarga(ultima.fecha)}`;
+
+    // HISTORIAL
+
+    const tbody = document.getElementById("historialBody");
+    tbody.innerHTML = "";
+
+    data.historial.forEach((medicion) => {
+
+        const tr = document.createElement("tr");
+
+        const cambioTexto = medicion.cambioPct === 0
+            ? "—"
+            : `${medicion.cambioPct > 0 ? "↑" : "↓"} ${Math.abs(medicion.cambioPct)}%`;
+
+        const cambioClase = medicion.cambioPct > 0 ? "red-text" : "green-text";
+
+        tr.innerHTML = `
+            <td>${formatearFechaLarga(medicion.fecha)}</td>
+            <td>${medicion.valor} kg</td>
+            <td class="${cambioClase}">${cambioTexto}</td>
+        `;
+
+        tbody.appendChild(tr);
+
     });
 
-    document.querySelectorAll(".menu-item").forEach(item => {
+    // INSIGHTS
 
-    item.addEventListener("click", () => {
+    if (data.habitos) {
 
-        sidebar.classList.remove("active");
-        sidebarOverlay.classList.remove("active");
+        const principal = obtenerPrincipalFuente(data.habitos);
 
-       });
+        document.getElementById("insightFuente").textContent = principal.nombre;
+        document.getElementById("insightFuenteTexto").textContent =
+            `Representa el ${principal.porcentaje}% de tu huella total.`;
 
-    });
+        document.getElementById("insightRecomendacion").textContent =
+            obtenerRecomendacionPrincipal(data.habitos);
 
+    }
 
-    // CERRAR SESIÓN DESDE EL MENÚ DEL PERFIL
-
-    logoutMenuBtn.addEventListener("click", () => {
-        logoutModal.style.display = "flex";
-    });
-
-
-    // CONFIRMAR CIERRE DE SESIÓN
-
-    confirmLogoutBtn.addEventListener("click", () => {
-
-        localStorage.clear();
-
-        window.location.href = "index.html";
-
-    });
-});
+}

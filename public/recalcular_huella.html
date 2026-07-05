@@ -45,32 +45,32 @@
 
             <div class="cards-grid">
 
-                <div class="goal-card">
+                <div class="goal-card" data-goal="reducir-residuos">
                     <img src="assets/images/reciclaje.png">
                     <span>Reducir residuos</span>
                 </div>
 
-                <div class="goal-card">
+                <div class="goal-card" data-goal="ahorrar-energia">
                     <img src="assets/images/energia.png">
                     <span>Ahorrar energía</span>
                 </div>
 
-                <div class="goal-card">
+                <div class="goal-card" data-goal="ahorrar-agua">
                     <img src="assets/images/agua.png">
                     <span>Ahorrar agua</span>
                 </div>
 
-                <div class="goal-card">
+                <div class="goal-card" data-goal="reforestar">
                     <img src="assets/images/arbol.png">
                     <span>Reforestar</span>
                 </div>
 
-                <div class="goal-card">
+                <div class="goal-card" data-goal="transporte-sostenible">
                     <img src="assets/images/bike.png">
                     <span>Transporte sostenible</span>
                 </div>
 
-                <div class="goal-card">
+                <div class="goal-card" data-goal="consumo-responsable">
                     <img src="assets/images/consumo.png">
                     <span>Consumo responsable</span>
                 </div>
@@ -87,24 +87,23 @@
 
             <div class="field">
                 <label>Medio de transporte principal</label>
-                <select>
-                    <option>Seleccionar</option>
+                <select id="transporteMedio">
                     <option>Bicicleta</option>
                     <option>Bus</option>
                     <option>Auto</option>
                     <option>Moto</option>
+                    <option>Caminando</option>
                 </select>
             </div>
 
             <div class="field">
                 <label>Km recorridos por semana</label>
-                <input type="number" placeholder="Ej: 20">
+                <input type="number" id="transporteKm" placeholder="Ej: 20" min="0">
             </div>
 
             <div class="field">
                 <label>Días por semana</label>
-                <select>
-                    <option>Seleccionar</option>
+                <select id="transporteDias">
                     <option>1 - 2</option>
                     <option>3 - 4</option>
                     <option>5 - 7</option>
@@ -121,8 +120,7 @@
 
             <div class="field">
                 <label>Tipo de vivienda</label>
-                <select>
-                    <option>Seleccionar</option>
+                <select id="energiaVivienda">
                     <option>Casa</option>
                     <option>Departamento</option>
                 </select>
@@ -130,13 +128,12 @@
 
             <div class="field">
                 <label>Personas en el hogar</label>
-                <input type="number">
+                <input type="number" id="energiaPersonas" min="1" placeholder="Ej: 3">
             </div>
 
             <div class="field">
                 <label>Fuente principal de energía</label>
-                <select>
-                    <option>Seleccionar</option>
+                <select id="energiaFuente">
                     <option>Electricidad</option>
                     <option>Gas</option>
                     <option>Solar</option>
@@ -153,8 +150,7 @@
 
             <div class="field">
                 <label>Tipo de alimentación</label>
-                <select>
-                    <option>Seleccionar</option>
+                <select id="alimentacionTipo">
                     <option>Vegana</option>
                     <option>Vegetariana</option>
                     <option>Mixta</option>
@@ -163,7 +159,7 @@
 
             <div class="field">
                 <label>Uso de plásticos</label>
-                <select>
+                <select id="residuosPlasticos">
                     <option>Bajo</option>
                     <option>Medio</option>
                     <option>Alto</option>
@@ -173,9 +169,9 @@
             <div class="field">
                 <label>¿Reciclas actualmente?</label>
 
-                <div class="toggle-buttons">
-                    <button type="button">Sí</button>
-                    <button type="button">No</button>
+                <div class="toggle-buttons" id="recicleToggle">
+                    <button type="button" class="active" data-valor="si">Sí</button>
+                    <button type="button" data-valor="no">No</button>
                 </div>
             </div>
 
@@ -186,7 +182,7 @@
 
             <div class="result-screen">
 
-                <h2>🌱 ¡Tu huella inicial está lista!</h2>
+                <h2>🌱 ¡Tu huella está lista!</h2>
 
                 <p class="result-subtitle">
                     Este es tu impacto ambiental actual
@@ -196,15 +192,15 @@
 
                     <div class="circle-content">
 
-                        <h1>2.45</h1>
+                        <h1 id="resultCircleValue">0</h1>
 
-                        <span>tCO₂e</span>
+                        <span>kg CO₂e / semana</span>
 
                     </div>
 
                 </div>
 
-                <div class="level-badge">
+                <div class="level-badge" id="resultLevelBadge">
                     Nivel: Moderado
                 </div>
 
@@ -220,9 +216,9 @@
                             class="eq-icon"
                         >
 
-                        <strong>24</strong>
+                        <strong id="eqArboles">0</strong>
 
-                        <span>Árboles sembrados</span>
+                        <span>Árboles necesarios para compensar</span>
 
                     </div>
 
@@ -234,9 +230,9 @@
                             class="eq-icon"
                         >
 
-                        <strong>120</strong>
+                        <strong id="eqBici">0</strong>
 
-                        <span>Km en bicicleta</span>
+                        <span>Km en bicicleta equivalentes</span>
 
                     </div>
 
@@ -248,9 +244,9 @@
                             class="eq-icon"
                         >
 
-                        <strong>18</strong>
+                        <strong id="eqReciclaje">0</strong>
 
-                        <span>Kg reciclados</span>
+                        <span>Kg de residuos equivalentes</span>
 
                     </div>
 
@@ -316,7 +312,8 @@
 
 </div>
 
-<script src="assets/scripts/onboarding.js"></script>
+<script src="assets/scripts/huella-data.js"></script>
+<script src="assets/scripts/recalcular_huella.js"></script>
 
 </body>
 </html>
