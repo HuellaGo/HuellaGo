@@ -1,272 +1,276 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Detalle del Reto | HuellaGo</title>
+    <title>Detalle del Reto | HuellaGo</title>
 
-<link rel="stylesheet" href="assets/styles/sidebar.css">
-<link rel="stylesheet" href="assets/styles/navbar.css">
-<link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
 <link rel="stylesheet" href="assets/styles/detalle-reto.css">
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
 
 </head>
 
 <body>
 
-<div class="app-container">
+    <div class="app-container">
 
-    <div id="sidebar-container"></div>
+        <div id="sidebar-container"></div>
 
-    <main class="main-content">
+        <main class="main-content">
 
-        <div id="navbar-container"></div>
+            <div id="navbar-container"></div>
 
-        <div class="dashboard-content">
+            <div class="dashboard-content">
 
-            <!-- BREADCRUMB / VOLVER -->
+                <!-- BREADCRUMB / VOLVER -->
 
-            <a href="retos.html" class="back-link">
-                <img src="assets/icons/flecha.png" alt="">
-                Volver a Retos
-            </a>
+                <a href="retos.html" class="back-link">
+                    <img src="assets/icons/flecha.png" alt="">
+                    Volver a Retos
+                </a>
 
-            <!-- VISTA NORMAL DEL RETO -->
+                <!-- VISTA NORMAL DEL RETO -->
 
-            <section class="reto-detalle-grid" id="vistaReto">
+                <section class="reto-detalle-grid" id="vistaReto">
 
-                <!-- IZQUIERDA -->
+                    <!-- IZQUIERDA -->
 
-                <div class="card reto-detalle-left">
+                    <div class="card reto-detalle-left">
 
-                    <div class="reto-detalle-image">
+                        <div class="reto-detalle-image">
 
-                        <img id="retoImagen" src="" alt="">
+                            <img id="retoImagen" src="" alt="">
 
-                        <span class="difficulty" id="retoDificultadBadge"></span>
+                            <span class="difficulty" id="retoDificultadBadge"></span>
 
-                        <span class="points" id="retoPuntosBadge">
-                            <img src="assets/icons/.png" alt="">
-                        </span>
+                            <span class="points" id="retoPuntosBadge">
+                                <img src="assets/icons/.png" alt="">
+                            </span>
 
-                    </div>
-
-                    <h1 id="retoTitulo"></h1>
-
-                    <p id="retoDescripcion"></p>
-
-                    <ul class="reto-detalle-info-list">
-
-                        <li>
-                            <img src="assets/icons/dificultad.png" alt="">
-                            <span>Dificultad</span>
-                            <strong id="retoDificultadTexto"></strong>
-                        </li>
-
-                        <li>
-                            <img src="assets/icons/reloj.png" alt="">
-                            <span>Duración</span>
-                            <strong id="retoDuracion"></strong>
-                        </li>
-
-                        <li>
-                            <img src="assets/icons/objetivo.png" alt="">
-                            <span>Objetivo</span>
-                            <strong id="retoObjetivo"></strong>
-                        </li>
-
-                        <li>
-                            <img src="assets/icons/impacto.png" alt="">
-                            <span>Impacto estimado</span>
-                            <strong id="retoImpacto"></strong>
-                        </li>
-
-                        <li>
-                            <img src="assets/icons/estrella.png" alt="">
-                            <span>EcoPuntos</span>
-                            <strong id="retoPuntosTexto"></strong>
-                        </li>
-
-                        <li>
-                            <img src="assets/icons/insignia.png" alt="">
-                            <span>Insignia</span>
-                            <strong id="retoInsignia"></strong>
-                        </li>
-
-                    </ul>
-
-                    <div class="reto-tip dato">
-                        <img src="assets/images/.png" alt="">
-                        <div>
-                            <strong>¿Sabías qué?</strong>
-                            <p id="retoDato"></p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- DERECHA -->
-
-                <div class="reto-detalle-right">
-
-                    <div class="card">
-
-                        <h4>Progreso</h4>
-
-                        <p class="reto-progreso-num" id="retoProgresoNum"></p>
-
-                        <span class="reto-progreso-label">Veces realizadas</span>
-
-                        <div class="progress-track">
-                            <div class="progress-fill" id="retoProgresoFill" style="width: 0%;"></div>
                         </div>
 
-                        <span class="reto-progreso-pct" id="retoProgresoPct"></span>
+                        <h1 id="retoTitulo"></h1>
 
-                    </div>
+                        <p id="retoDescripcion"></p>
 
-                    <div class="card info-box" id="infoBoxSinIniciar">
-                        <img src="assets/images/.png" alt="">
-                        <p>
-                            Este reto aún no ha sido iniciado. Acepta el reto para comenzar a registrar tu progreso.
-                        </p>
-                    </div>
+                        <ul class="reto-detalle-info-list">
 
-                    <div class="card" id="cardHistorial">
-
-                        <div class="historial-header">
-                            <h4>Historial de avances</h4>
-                            <button class="action-btn green small" id="btnRegistrarAvance">
-                                + Registrar avance
-                            </button>
-                        </div>
-
-                        <p id="retoComoCompletar"></p>
-
-                        <ul class="historial-avances" id="historialAvances">
-                            <li class="historial-vacio" id="historialVacio">
-                                Todavía no registras ningún avance.
+                            <li>
+                                <img src="assets/icons/dificultad.png" alt="">
+                                <span>Dificultad</span>
+                                <strong id="retoDificultadTexto"></strong>
                             </li>
+
+                            <li>
+                                <img src="assets/icons/reloj.png" alt="">
+                                <span>Duración</span>
+                                <strong id="retoDuracion"></strong>
+                            </li>
+
+                            <li>
+                                <img src="assets/icons/objetivo.png" alt="">
+                                <span>Objetivo</span>
+                                <strong id="retoObjetivo"></strong>
+                            </li>
+
+                            <li>
+                                <img src="assets/icons/impacto.png" alt="">
+                                <span>Impacto estimado</span>
+                                <strong id="retoImpacto"></strong>
+                            </li>
+
+                            <li>
+                                <img src="assets/icons/estrella.png" alt="">
+                                <span>EcoPuntos</span>
+                                <strong id="retoPuntosTexto"></strong>
+                            </li>
+
+                            <li>
+                                <img src="assets/icons/insignia.png" alt="">
+                                <span>Insignia</span>
+                                <strong id="retoInsignia"></strong>
+                            </li>
+
                         </ul>
 
-                    </div>
-
-                    <div class="reto-tip consejo">
-                        <img src="assets/icons/bombilla.png" alt="">
-                        <div>
-                            <strong>Consejo</strong>
-                            <p id="retoConsejo"></p>
+                        <div class="reto-tip dato">
+                            <img src="assets/images/.png" alt="">
+                            <div>
+                                <strong>¿Sabías qué?</strong>
+                                <p id="retoDato"></p>
+                            </div>
                         </div>
+
                     </div>
 
-                    <div class="reto-detalle-actions">
+                    <!-- DERECHA -->
 
-                        <button class="action-btn" id="btnCancelar">
-                            Cancelar
-                        </button>
+                    <div class="reto-detalle-right">
 
-                        <button class="action-btn green" id="btnComenzar">
+                        <div class="card">
+
+                            <h4>Progreso</h4>
+
+                            <p class="reto-progreso-num" id="retoProgresoNum"></p>
+
+                            <span class="reto-progreso-label">Veces realizadas</span>
+
+                            <div class="progress-track">
+                                <div class="progress-fill" id="retoProgresoFill" style="width: 0%;"></div>
+                            </div>
+
+                            <span class="reto-progreso-pct" id="retoProgresoPct"></span>
+
+                        </div>
+
+                        <div class="card info-box" id="infoBoxSinIniciar">
+                            <img src="assets/images/.png" alt="">
+                            <p>
+                                Este reto aún no ha sido iniciado. Acepta el reto para comenzar a registrar tu progreso.
+                            </p>
+                        </div>
+
+                        <div class="card" id="cardHistorial">
+
+                            <div class="historial-header">
+                                <h4>Historial de avances</h4>
+                                <button class="action-btn green small" id="btnRegistrarAvance">
+                                    + Registrar avance
+                                </button>
+                            </div>
+
+                            <p id="retoComoCompletar"></p>
+
+                            <ul class="historial-avances" id="historialAvances">
+                                <li class="historial-vacio" id="historialVacio">
+                                    Todavía no registras ningún avance.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <div class="reto-tip consejo">
+                            <img src="assets/icons/bombilla.png" alt="">
+                            <div>
+                                <strong>Consejo</strong>
+                                <p id="retoConsejo"></p>
+                            </div>
+                        </div>
+
+                        <div class="reto-detalle-actions">
+
+                            <button class="action-btn" id="btnCancelar">
+                                Cancelar
+                            </button>
+
+                            <button class="action-btn green" id="btnComenzar">
+                                <img src="assets/icons/hoja.png" alt="">
+                                Comenzar reto
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- VISTA DE RECOMPENSA (oculta hasta completar) -->
+
+                <section class="card reto-recompensa" id="vistaRecompensa">
+
+                    <div class="recompensa-icon">
+                        <img src="assets/icons/trofeo.png" alt="">
+                    </div>
+
+                    <h1>¡Reto completado!</h1>
+
+                    <p id="recompensaTitulo"></p>
+
+                    <div class="recompensa-stats">
+
+                        <div class="recompensa-stat">
                             <img src="assets/icons/hoja.png" alt="">
-                            Comenzar reto
-                        </button>
+                            <strong id="recompensaPuntos"></strong>
+                            <span>EcoPuntos ganados</span>
+                        </div>
+
+                        <div class="recompensa-stat">
+                            <img src="assets/icons/insignia.png" alt="">
+                            <strong id="recompensaInsignia"></strong>
+                            <span>Insignia desbloqueada</span>
+                        </div>
+
+                        <div class="recompensa-stat">
+                            <img src="assets/icons/impacto.png" alt="">
+                            <strong id="recompensaImpacto"></strong>
+                            <span>Impacto reducido</span>
+                        </div>
 
                     </div>
 
-                </div>
+                    <div class="reto-detalle-actions centrado">
 
-            </section>
+                        <a href="retos.html" class="action-btn green">
+                            Ver más retos
+                        </a>
 
-            <!-- VISTA DE RECOMPENSA (oculta hasta completar) -->
-
-            <section class="card reto-recompensa" id="vistaRecompensa">
-
-                <div class="recompensa-icon">
-                    <img src="assets/icons/trofeo.png" alt="">
-                </div>
-
-                <h1>¡Reto completado!</h1>
-
-                <p id="recompensaTitulo"></p>
-
-                <div class="recompensa-stats">
-
-                    <div class="recompensa-stat">
-                        <img src="assets/icons/hoja.png" alt="">
-                        <strong id="recompensaPuntos"></strong>
-                        <span>EcoPuntos ganados</span>
                     </div>
 
-                    <div class="recompensa-stat">
-                        <img src="assets/icons/insignia.png" alt="">
-                        <strong id="recompensaInsignia"></strong>
-                        <span>Insignia desbloqueada</span>
-                    </div>
+                </section>
 
-                    <div class="recompensa-stat">
-                        <img src="assets/icons/impacto.png" alt="">
-                        <strong id="recompensaImpacto"></strong>
-                        <span>Impacto reducido</span>
-                    </div>
+            </div>
 
-                </div>
+        </main>
 
-                <div class="reto-detalle-actions centrado">
+    </div>
 
-                    <a href="retos.html" class="action-btn green">
-                        Ver más retos
-                    </a>
+    <!-- MODAL: REGISTRAR AVANCE -->
 
-                </div>
+    <div class="modal-overlay" id="modalAvance">
 
-            </section>
+        <div class="modal-box">
 
-        </div>
+            <div class="modal-header">
+                <h3>Registrar avance</h3>
+                <button class="modal-close" id="btnCerrarModal">&times;</button>
+            </div>
 
-    </main>
+            <p class="modal-pregunta" id="modalAvancePregunta">
+                ¿Cuántas veces completaste el reto hoy?
+            </p>
 
-</div>
+            <div class="cantidad-stepper">
+                <button type="button" id="btnMenos">−</button>
+                <span id="cantidadValor">1</span>
+                <button type="button" id="btnMas">+</button>
+            </div>
 
-<!-- MODAL: REGISTRAR AVANCE -->
+            <label for="inputFecha">Fecha</label>
+            <input type="date" id="inputFecha">
 
-<div class="modal-overlay" id="modalAvance">
+            <label for="inputNota">Nota (opcional)</label>
+            <textarea id="inputNota" placeholder="¿Algún comentario?"></textarea>
 
-    <div class="modal-box">
+            <div class="reto-detalle-actions">
+                <button class="action-btn" id="btnCancelarAvance">Cancelar</button>
+                <button class="action-btn green" id="btnGuardarAvance">Guardar avance</button>
+            </div>
 
-        <div class="modal-header">
-            <h3>Registrar avance</h3>
-            <button class="modal-close" id="btnCerrarModal">&times;</button>
-        </div>
-
-        <p class="modal-pregunta" id="modalAvancePregunta">
-            ¿Cuántas veces completaste el reto hoy?
-        </p>
-
-        <div class="cantidad-stepper">
-            <button type="button" id="btnMenos">−</button>
-            <span id="cantidadValor">1</span>
-            <button type="button" id="btnMas">+</button>
-        </div>
-
-        <label for="inputFecha">Fecha</label>
-        <input type="date" id="inputFecha">
-
-        <label for="inputNota">Nota (opcional)</label>
-        <textarea id="inputNota" placeholder="¿Algún comentario?"></textarea>
-
-        <div class="reto-detalle-actions">
-            <button class="action-btn" id="btnCancelarAvance">Cancelar</button>
-            <button class="action-btn green" id="btnGuardarAvance">Guardar avance</button>
         </div>
 
     </div>
 
-</div>
-
-<script src="assets/scripts/components.js"></script>
-<script src="assets/scripts/retos-data.js"></script>
-<script src="assets/scripts/detalle-reto.js"></script>
+    <script src="assets/scripts/components.js"></script>
+    <script src="assets/scripts/retos-data.js"></script>
+    <script src="assets/scripts/detalle-reto.js"></script>
+    <div id="logout-modal-container"></div>
 
 </body>
+
 </html>

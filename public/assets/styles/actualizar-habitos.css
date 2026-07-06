@@ -338,7 +338,7 @@ tbody tr{
     font-size:65px;
     font-weight:700;
 
-    box-shadow:0 12px 30px rgba(0,210,106,.25);
+    box-shadow:0 12px 30px #22C55E;;
 }
 
 .success-screen h1{
@@ -358,7 +358,7 @@ tbody tr{
     margin-top:10px;
     padding:16px 40px;
     border-radius:16px;
-    box-shadow:0 8px 20px rgba(22,151,68,.18);
+    box-shadow:0 8px 20px #22C55E;
 }
 
 /* =====================================
@@ -417,179 +417,50 @@ tbody tr{
 }
 }
 
-/* MODAL CERRAR SESIÓN */
 
-.logout-modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.35);
-    z-index:9999;
-    justify-content:center;
+/* ===== BOTÓN VOLVER ===== */
+
+.back-link{
+    margin:24px 0 18px 32px;
+}
+
+.welcome{
+    margin-left:32px;
+    margin-bottom:28px;
+}
+
+.back-link a{
+    display:inline-flex;
     align-items:center;
-}
-
-.logout-modal-content{
-    background:white;
-    width:500px;
-    max-width:90%;
-    padding:50px;
-    border-radius:30px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:20px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
-}
-
-.logout-success-icon{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:#00d26a;
-    color:white;
-    font-size:60px;
-    font-weight:700;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.logout-modal-content h1{
-    margin:0;
-    color:#1f2937;
-}
-
-.logout-modal-content p{
+    gap:8px;
+    text-decoration:none;
     color:#6b7280;
-}
-
-#confirmLogoutBtn{
-    background:#00d26a;
-    color:white;
-    border:none;
-    border-radius:16px;
-    padding:16px 50px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-
-#confirmLogoutBtn:hover{
-    background:#00bf61;
-}
-
-.back-btn{
-
-    width:44px;
-    height:44px;
-
-    border:none;
-    border-radius:12px;
-
-    background:#f5f7f5;
-
-    font-size:22px;
-
-    cursor:pointer;
-
+    font-size:14px;
+    font-weight:500;
     transition:.2s;
 }
 
-.back-btn:hover{
-
-    background:#edf9ef;
-    transform:translateY(-1px);
-
+.back-link a:hover{
+    color:#22C55E;
 }
 
-.exit-modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.35);
-    z-index:9999;
-
-    justify-content:center;
-    align-items:center;
+/* CONTENEDOR DEL ENCABEZADO */
+#mainContainer{
+    width:95%;
+    max-width:1200px;
+    margin:0 auto;
 }
 
-.exit-modal-content{
-    background:white;
-    width:500px;
-    max-width:90%;
-    padding:50px;
-    border-radius:30px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:20px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
+/* TÍTULO */
+.welcome{
+    margin-bottom:25px;
 }
-
-.exit-buttons{
-    display:flex;
-    gap:16px;
-    margin-top:10px;
-}
-
-.exit-buttons button{
-    border:none;
-    padding:14px 28px;
-    border-radius:14px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:all .3s ease;
-}
-
-#cancelExitBtn{
-    background:#f3f4f6;
-    color:#374151;
-}
-
-#cancelExitBtn:hover{
-    background:#e5e7eb;
-}
-
-#confirmExitBtn{
-    background:#00d26a;
-    color:white;
-    box-shadow:0 8px 20px rgba(0,210,106,.2);
-}
-
-#confirmExitBtn:hover{
-    background:#00bf61;
-    transform:translateY(-2px);
-}
-
-#confirmExitBtn{
-    min-width:120px;
-}
-
-#cancelExitBtn{
-    min-width:120px;
-}
-
-/* ESCRITORIO */
-
-.back-btn{
-    display:none;
-}
-
 
 .welcome h1{
-    margin-left:28px;
+    margin:0 0 8px;
 }
 
 .welcome p{
-    margin-left:28px;
+    color:#6b7280;
+    line-height:1.5;
 }

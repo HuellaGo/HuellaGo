@@ -35,68 +35,104 @@ function pintarEstadosEnCards() {
 
 function initFiltros() {
 
-    const tabs = document.querySelectorAll(".tab");
-    const cards = document.querySelectorAll(".reto-card");
-    const searchInput = document.getElementById("searchInput");
+        const tabs = document.querySelectorAll(".tab");
+        const cards = document.querySelectorAll(".reto-card");
+        const searchInput = document.getElementById("searchInput");
 
-    const cardsContainer = document.getElementById("cardsContainer");
-    const colectivosContainer = document.getElementById("colectivosContainer");
-    const toolbar = document.getElementById("retosToolbar");
+        const cardsContainer = document.getElementById("cardsContainer");
+        const colectivosContainer = document.getElementById("colectivosContainer");
+        const toolbar = document.getElementById("retosToolbar");
+        const sortBtn = document.getElementById("sortBtn");
 
-    let tabActual = "disponible";
+        let tabActual = "disponible";
+        let ordenAscendente = true;
 
-    function filtrarCards() {
+        function filtrarCards() {
 
-        const texto = searchInput.value.trim().toLowerCase();
+            const texto = searchInput.value.trim().toLowerCase();
 
-        cards.forEach((card) => {
+            cards.forEach((card) => {
 
-            const estado = card.getAttribute("data-estado");
-            const titulo = card.querySelector("h3").textContent.toLowerCase();
+                const estado = card.getAttribute("data-estado");
+                const titulo = card.querySelector("h3").textContent.toLowerCase();
 
-            const coincideTab = estado === tabActual;
-            const coincideTexto = titulo.includes(texto);
+                const coincideTab = estado === tabActual;
+                const coincideTexto = titulo.includes(texto);
 
-            card.classList.toggle("hidden", !(coincideTab && coincideTexto));
+                card.classList.toggle("hidden", !(coincideTab && coincideTexto));
+
+            });
+
+        }
+
+        function ordenarCards() {
+
+            const visibles = Array.from(cards);
+
+            visibles.sort((a, b) => {
+
+                const dificultadA = a.querySelector(".difficulty").textContent.trim();
+                const dificultadB = b.querySelector(".difficulty").textContent.trim();
+
+                const orden = {
+                    "Fácil": 1,
+                    "Medio": 2,
+                    "Difícil": 3
+                };
+
+                return ordenAscendente
+                    ? orden[dificultadA] - orden[dificultadB]
+                    : orden[dificultadB] - orden[dificultadA];
+
+            });
+
+            visibles.forEach(card => cardsContainer.appendChild(card));
+
+            document.getElementById("sortText").textContent =
+                ordenAscendente
+                    ? "Fácil → Difícil"
+                    : "Difícil → Fácil";
+
+            ordenAscendente = !ordenAscendente;
+
+        }
+
+        tabs.forEach((tab) => {
+
+            tab.addEventListener("click", () => {
+
+                tabs.forEach((t) => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                tabActual = tab.getAttribute("data-tab");
+
+                if (tabActual === "colectivos") {
+
+                    cardsContainer.style.display = "none";
+                    toolbar.style.display = "none";
+                    colectivosContainer.style.display = "block";
+
+                    pintarColectivos();
+
+                } else {
+
+                    cardsContainer.style.display = "grid";
+                    toolbar.style.display = "flex";
+                    colectivosContainer.style.display = "none";
+
+                    filtrarCards();
+
+                }
+
+            });
 
         });
 
-    }
+        sortBtn?.addEventListener("click", ordenarCards);
 
-    tabs.forEach((tab) => {
+        searchInput?.addEventListener("input", filtrarCards);
 
-        tab.addEventListener("click", () => {
-
-            tabs.forEach((t) => t.classList.remove("active"));
-            tab.classList.add("active");
-
-            tabActual = tab.getAttribute("data-tab");
-
-            if (tabActual === "colectivos") {
-
-                cardsContainer.style.display = "none";
-                toolbar.style.display = "none";
-                colectivosContainer.style.display = "block";
-
-                pintarColectivos();
-
-            } else {
-
-                cardsContainer.style.display = "grid";
-                toolbar.style.display = "flex";
-                colectivosContainer.style.display = "none";
-
-                filtrarCards();
-
-            }
-
-        });
-
-    });
-
-    searchInput?.addEventListener("input", filtrarCards);
-
-    filtrarCards();
+        filtrarCards();
 
 }
 

@@ -21,7 +21,11 @@ async function loadComponent(url, containerId) {
 
 function marcarPaginaActiva() {
 
-    const currentPage = window.location.pathname.split("/").pop() || "dashboard.html";
+    let currentPage = window.location.pathname.split("/").pop() || "dashboard.html";
+
+    if (currentPage === "actualizar-habitos.html") {
+        currentPage = "mi-huella.html";
+    }
 
     document.querySelectorAll(".menu-item").forEach((item) => {
 
@@ -77,18 +81,31 @@ function initProfileMenu() {
 
 function initLogout() {
 
+    console.log("initLogout ejecutado");
+
     const logoutBtn = document.getElementById("logoutBtn");
     const logoutMenuBtn = document.getElementById("logoutMenuBtn");
+
     const logoutModal = document.getElementById("logoutModal");
+    const cancelLogoutBtn = document.getElementById("cancelLogoutBtn");
     const confirmLogoutBtn = document.getElementById("confirmLogoutBtn");
 
+    console.log(logoutBtn);
+    console.log(logoutMenuBtn);
+    console.log(logoutModal);
+
     const abrirModal = (e) => {
+        console.log("SE EJECUTÓ abrirModal");
         e?.preventDefault();
         logoutModal?.classList.add("show");
     };
 
     logoutBtn?.addEventListener("click", abrirModal);
     logoutMenuBtn?.addEventListener("click", abrirModal);
+
+    cancelLogoutBtn?.addEventListener("click", () => {
+        logoutModal?.classList.remove("show");
+    });
 
     confirmLogoutBtn?.addEventListener("click", () => {
         localStorage.clear();
@@ -141,7 +158,8 @@ async function initLayout() {
 
     await Promise.all([
         loadComponent("components/sidebar.html", "sidebar-container"),
-        loadComponent("components/navbar.html", "navbar-container")
+        loadComponent("components/navbar.html", "navbar-container"),
+        loadComponent("components/logout-modal.html", "logout-modal-container")
     ]);
 
     marcarPaginaActiva();
@@ -151,5 +169,6 @@ async function initLayout() {
     actualizarNivelNavbar();
 
 }
+
 
 document.addEventListener("DOMContentLoaded", initLayout);

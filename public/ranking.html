@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HuellaGo Dashboard</title>
 
-    <link rel="stylesheet" href="assets/styles/dashboard.css">
-    <link rel="stylesheet" href="assets/styles/ranking.css">
     <link rel="stylesheet" href="assets/styles/sidebar.css">
     <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+<link rel="stylesheet" href="assets/styles/ranking.css">
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
 </head>
 
 <body>
@@ -44,7 +45,8 @@
 
                     <div class="ranking-filters" role="group" aria-label="Filtrar ranking por periodo">
 
-                        <button id="btn-semanal" class="filter-btn active-filter" data-periodo="semanal" aria-pressed="true">
+                        <button id="btn-semanal" class="filter-btn active-filter" data-periodo="semanal"
+                            aria-pressed="true">
                             Semanal
                         </button>
 
@@ -153,7 +155,8 @@
                         <div class="card info-box" id="comparacionInfoBox" style="display: none;">
                             <img src="assets/icons/info.png" alt="">
                             <p>
-                                Todavía no tienes una medición de huella registrada. Ve a "Mi Huella" para poder comparar tu impacto con la comunidad.
+                                Todavía no tienes una medición de huella registrada. Ve a "Mi Huella" para poder
+                                comparar tu impacto con la comunidad.
                             </p>
                         </div>
 
@@ -198,6 +201,7 @@
     <script src="assets/scripts/retos-data.js"></script>
     <script src="assets/scripts/ranking-data.js"></script>
     <script src="assets/scripts/ranking.js"></script>
+    <div id="logout-modal-container"></div>
 </body>
 
 </html>

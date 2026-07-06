@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HuellaGo Dashboard</title>
 
-    <link rel="stylesheet" href="assets/styles/dashboard.css">
-    <link rel="stylesheet" href="assets/styles/ranking.css">
-    <link rel="stylesheet" href="assets/styles/insignias.css">
     <link rel="stylesheet" href="assets/styles/sidebar.css">
     <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+<link rel="stylesheet" href="assets/styles/insignias.css">
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
 </head>
 
 <body>
@@ -123,7 +123,8 @@
                     <!-- TABS -->
 
                     <div class="insignias-tabs" role="tablist" aria-label="Panel de recompensas">
-                        <button class="tab-btn active-tab" id="tab-insignias" data-tab="insignias" role="tab" aria-selected="true">
+                        <button class="tab-btn active-tab" id="tab-insignias" data-tab="insignias" role="tab"
+                            aria-selected="true">
                             Insignias
                         </button>
                         <button class="tab-btn" id="tab-logros" data-tab="logros" role="tab" aria-selected="false">
@@ -195,7 +196,8 @@
 
                             <div class="card info-box" id="logrosVacioBox" style="display:none;">
                                 <img src="assets/icons/info.png" alt="">
-                                <p>Aún no tienes recompensas registradas. ¡Completa tu primer reto para empezar a sumar eco puntos!</p>
+                                <p>Aún no tienes recompensas registradas. ¡Completa tu primer reto para empezar a sumar
+                                    eco puntos!</p>
                             </div>
 
                         </div>
@@ -228,6 +230,7 @@
     <script src="assets/scripts/retos-data.js"></script>
     <script src="assets/scripts/insignias-data.js"></script>
     <script src="assets/scripts/insignias.js"></script>
+    <div id="logout-modal-container"></div>
 </body>
 
 </html>

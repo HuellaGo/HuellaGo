@@ -890,6 +890,9 @@ body{
     font-size:60px;
     font-weight:700;
 }
+.logout-modal.show{
+    display:flex;
+}
 
 .logout-modal-content h1{
     color:#1f2937;

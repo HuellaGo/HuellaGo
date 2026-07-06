@@ -78,8 +78,8 @@
 }
 
 .stat-icon img {
-    width: 22px;
-    height: 22px;
+    width: 60px;
+    height: 40px;
 }
 
 .stat-icon.green {
@@ -181,8 +181,8 @@
 }
 
 .activity-icon img {
-    width: 16px;
-    height: 16px;
+    width:40px;
+    height: 20px;
 }
 
 .activity-info span {
@@ -278,8 +278,8 @@
 }
 
 .equivalencia-icon img {
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
 }
 
 .equivalencia-icon.green {
@@ -415,3 +415,4 @@
     font-weight: 600;
     font-size: 14px;
 }
+
