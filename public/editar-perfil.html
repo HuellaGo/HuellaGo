@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editar información personal | HuellaGo</title>
+
+<link rel="stylesheet" href="assets/styles/perfil.css">
+
+</head>
+
+<body class="profile-body" data-page="editar-perfil">
+
+<div class="profile-page">
+
+    <!-- ===== FORM VIEW ===== -->
+    <div id="editForm">
+
+        <header class="profile-topbar">
+
+            <a class="icon-btn" href="mi-perfil.html" aria-label="Volver">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+
+            <h1>Editar información personal</h1>
+
+        </header>
+
+        <div class="profile-avatar-wrap">
+
+            <div class="avatar-circle small">
+                <img src="assets/icons/user.png" alt="Avatar de usuario">
+                <div class="avatar-edit-badge" title="Editar foto">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        <form class="profile-form" id="editarPerfilForm" novalidate>
+
+            <div class="form-group">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" id="inputNombre" name="nombre">
+                <span class="field-error">Ingresa tu nombre.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="inputApellido">Apellido</label>
+                <input type="text" id="inputApellido" name="apellido">
+                <span class="field-error">Ingresa tu apellido.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="inputFecha">Fecha de nacimiento</label>
+                <input type="date" id="inputFecha" name="fecha">
+                <span class="field-error">Ingresa una fecha válida.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="inputUbicacion">Ubicación</label>
+                <div class="input-icon-wrap">
+                    <input type="text" id="inputUbicacion" name="ubicacion">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <span class="field-error">Ingresa tu ubicación.</span>
+            </div>
+
+            <div class="form-group">
+                <p class="interests-label">Intereses ambientales</p>
+                <div class="interests-chips">
+
+                    <button type="button" class="chip" data-interest="reciclaje">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Reciclaje
+                    </button>
+
+                    <button type="button" class="chip" data-interest="movilidad">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Movilidad sostenible
+                    </button>
+
+                    <button type="button" class="chip" data-interest="agua">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Ahorro de agua
+                    </button>
+
+                    <button type="button" class="chip" data-interest="energia">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Energía limpia
+                    </button>
+
+                </div>
+            </div>
+
+            <button type="submit" class="save-link-btn">Guardar</button>
+
+        </form>
+
+    </div>
+
+    <!-- ===== CONFIRMATION VIEW ===== -->
+    <div class="confirmation-view" id="confirmationView">
+
+        <svg class="deco-leaf tl" viewBox="0 0 24 24" fill="#16a34a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17 1.39.41 2.34.41 1.68 0 3.42-.71 4.87-2.18C17.4 14.6 17 8 17 8z"/></svg>
+        <svg class="deco-leaf tr" viewBox="0 0 24 24" fill="#16a34a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17 1.39.41 2.34.41 1.68 0 3.42-.71 4.87-2.18C17.4 14.6 17 8 17 8z"/></svg>
+        <svg class="deco-leaf bl" viewBox="0 0 24 24" fill="#16a34a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17 1.39.41 2.34.41 1.68 0 3.42-.71 4.87-2.18C17.4 14.6 17 8 17 8z"/></svg>
+        <svg class="deco-leaf br" viewBox="0 0 24 24" fill="#16a34a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17 1.39.41 2.34.41 1.68 0 3.42-.71 4.87-2.18C17.4 14.6 17 8 17 8z"/></svg>
+
+        <div class="confirm-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <h2>¡Cambios guardados!</h2>
+        <p>Tu perfil y preferencias se han actualizado correctamente.</p>
+
+        <a class="confirm-btn" href="mi-perfil.html">Volver a mi perfil</a>
+
+    </div>
+
+</div>
+
+<script src="assets/scripts/perfil.js"></script>
+
+</body>
+</html>

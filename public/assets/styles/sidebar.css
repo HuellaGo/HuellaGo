@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* ===== VARIABLES ===== */
+
+:root {
+
+    --color-sidebar: #1B3A2F;
+    --color-sidebar-hover: #295445;
+    --color-primary: #22C55E;
+    --color-primary-dark: #16A34A;
+    --color-primary-light: #DCFCE7;
+
+    --color-bg: #f5f6f8;
+    --color-white: #ffffff;
+
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-text-muted: #9ca3af;
+
+    --color-border: #e5e7eb;
+
+    --color-orange: #f59e0b;
+    --color-blue: #3b82f6;
+    --color-red: #ef4444;
+
+    --sidebar-width: 260px;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+}
+
+/* ===== RESET (solo panel interno) ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ===== LAYOUT GENERAL ===== */
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* ===== TARJETA BASE (reutilizable en todos los módulos) ===== */
+
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--color-sidebar);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 16px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 8px 32px;
+}
+
+.logo-img {
+    width: 36px;
+    height: 36px;
+}
+
+.logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo span {
+    color: var(--color-white);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* MENU */
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    color: rgba(255, 255, 255, 0.7);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: var(--color-sidebar-hover);
+    color: var(--color-white);
+}
+
+.menu-item.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.menu-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu-item.active .menu-icon img,
+.menu-item:hover .menu-icon img {
+    filter: brightness(0) invert(1);
+}
+
+/* LOGOUT */
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout:hover {
+    background-color: var(--color-sidebar-hover);
+    color: var(--color-white);
+}
+
+.logout .menu-icon img {
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+}
+
+/* OVERLAY (mobile) */
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 90;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+}
+/* ===== ELEMENTOS COMPARTIDOS (usados en varios módulos) ===== */
+
+.badge {
+    display: inline-block;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-bg);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 20px;
+}
+
+.green-text {
+    color: var(--color-primary-dark);
+}
+
+.red-text {
+    color: var(--color-red);
+}

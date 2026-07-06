@@ -5,470 +5,265 @@
 <head>
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Actualizar Hábitos | HuellaGo</title>
-<link rel="stylesheet" href="assets/styles/dashboard.css">
-<link rel="stylesheet" href="assets/styles/actualizar-habitos.css">
+    <title>Actualizar Hábitos | HuellaGo</title>
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/actualizar-habitos.css">
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
 
 
 </head>
 
 <body>
 
-<div class="app-container">
+    <div class="app-container">
 
 
-<!-- SIDEBAR -->
+        <!-- SIDEBAR -->
+        <div id="sidebar-container"></div>
 
-<aside class="sidebar">
+        <!-- MAIN -->
 
-    <div>
+ <main class="main-content">
 
-        <!-- LOGO -->
+    <!-- HEADER -->
+    <div id="navbar-container"></div>
 
-        <div class="logo">
+    <div id="mainContainer">
 
-            <div class="logo-img">
-
-                <img
-                    src="assets/images/Logo.png"
-                    alt="HuellaGo"
-                >
-
-            </div>
-
-            <span class="sidebar-text">
-                HuellaGo
-            </span>
-
-        </div>
-
-        <!-- MENÚ -->
-
-        <nav class="nav-menu">
-
-            <a href="dashboard.html" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/home.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Inicio
-                </span>
-
+        <!-- TITULO -->
+        <div class="back-link">
+            <a href="mi-huella.html">
+                <span>←</span>
+                <span>Volver atrás</span>
             </a>
-
-            <a href="#" class="menu-item active">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/huella.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Mi Huella
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/retos.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Retos
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/recomendaciones.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Recomendaciones AI
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/ranking.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Ranking
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/insignias.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Insignias
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/configuracion.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Configuración
-                </span>
-
-            </a>
-
-        </nav>
-
-    </div>
-
-    <!-- LOGOUT -->
-
-    <div class="logout" id="logoutBtn">
-
-        <div class="menu-icon">
-            <img src="assets/icons/cerrar.png" alt="">
         </div>
 
-        <span class="sidebar-text">
-            Cerrar sesión
-        </span>
+        <section class="welcome">
 
-    </div>
+            <div>
+                <h1>Actualizar hábitos</h1>
 
-</aside>
-
-<!-- MAIN -->
-
-<main class="main-content">
-
-     <!-- HEADER -->
-<div id="mainContainer">
-    <header class="header">
-
-        <div class="header-right">
-
-            <div class="notification-btn">
-
-                <img
-                    src="assets/icons/campana.png"
-                    alt="Notificaciones"
-                >
-
+                <p>
+                    Modifica la información de tu estilo de vida sin realizar una nueva medición completa.
+                </p>
             </div>
 
-            <div class="user-profile" id="profileBtn">
+        </section>
 
-                <div class="avatar">
+                <!-- TRANSPORTE -->
 
-                    <img
-                        src="assets/icons/user.png"
-                        alt="Usuario"
-                    >
+                <section class="card">
+
+                    <h3>🚲 Transporte</h3>
+
+                    <div class="habit-grid">
+
+                        <div class="input-group">
+
+                            <label>Medio principal</label>
+
+                            <select id="habMedio">
+
+                                <option>Bicicleta</option>
+                                <option>Auto</option>
+                                <option>Bus</option>
+                                <option>Moto</option>
+                                <option>Caminando</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label>Kilómetros por semana</label>
+
+                            <input type="number" id="habKm" placeholder="15" min="0">
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label>Días por semana</label>
+
+                            <select id="habDias">
+
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ENERGIA -->
+
+                <section class="card">
+
+                    <h3>⚡ Energía</h3>
+
+                    <div class="habit-grid">
+
+                        <div class="input-group">
+
+                            <label>Tipo de vivienda</label>
+
+                            <select id="habVivienda">
+
+                                <option>Casa</option>
+                                <option>Departamento</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label>Personas en casa</label>
+
+                            <input type="number" id="habPersonas" placeholder="3" min="1">
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label>Fuente principal</label>
+
+                            <select id="habFuente">
+
+                                <option>Electricidad</option>
+                                <option>Gas</option>
+                                <option>Solar</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ALIMENTACION -->
+
+                <section class="card">
+
+                    <h3>🍎 Alimentación</h3>
+
+                    <div class="habit-grid">
+
+                        <div class="input-group">
+
+                            <label>Tipo de alimentación</label>
+
+                            <select id="habDieta">
+
+                                <option>Mixta</option>
+                                <option>Vegetariana</option>
+                                <option>Vegana</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- RESIDUOS -->
+
+                <section class="card">
+
+                    <h3>♻️ Residuos</h3>
+
+                    <div class="habit-grid">
+
+                        <div class="input-group">
+
+                            <label>Uso de plásticos</label>
+
+                            <select id="habPlasticos">
+
+                                <option>Bajo</option>
+                                <option>Medio</option>
+                                <option>Alto</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label>¿Reciclas en casa?</label>
+
+                            <select id="habRecicla">
+
+                                <option>Sí</option>
+                                <option>No</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <div class="save-container">
+
+                    <button class="action-btn green" id="saveHabitsBtn">
+                        Guardar cambios
+                    </button>
 
                 </div>
 
-                <div class="user-info">
+            </div> <!-- FIN mainContainer -->
 
-                    <h4>Mateo</h4>
+        </main>
 
-                    <span>
-                        Nivel 5 · Eco Heroe
-                    </span>
+    </div> <!-- FIN app-container -->
 
-                </div>
+    <!-- PANTALLA ÉXITO -->
 
-                <div class="profile-arrow">
+    <div class="success-screen" id="successScreen">
 
-                    <img
-                        src="assets/icons/flecha.png"
-                        alt=""
-                    >
-                </div>
-                <div class="profile-menu" id="profileMenu">
-                    <a href="mi-huella.html">
-                         Mi perfil
-                    </a>
-
-                    <a href="#" id="logoutMenuBtn">
-                         Cerrar sesión
-                     </a>
-                </div>
-
-            </div>
-
+        <div class="success-icon">
+            ✓
         </div>
 
-    </header>
-
-    <!-- TITULO -->
-
-    <section class="welcome">
-
-        <div>
-
-            <h1>Actualizar hábitos</h1>
-
-            <p>
-                Modifica la información de tu estilo de vida sin realizar una nueva medición completa.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- TRANSPORTE -->
-
-    <section class="card">
-
-        <h3>🚲 Transporte</h3>
-
-        <div class="habit-grid">
-
-            <div class="input-group">
-
-                <label>Medio principal</label>
-
-                <select>
-
-                    <option>Bicicleta</option>
-                    <option>Auto</option>
-                    <option>Bus</option>
-                    <option>Caminando</option>
-
-                </select>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Kilómetros por semana</label>
-
-                <input
-                    type="number"
-                    placeholder="15"
-                >
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Días por semana</label>
-
-                <select>
-
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ENERGIA -->
-
-    <section class="card">
-
-        <h3>⚡ Energía</h3>
-
-        <div class="habit-grid">
-
-            <div class="input-group">
-
-                <label>Tipo de vivienda</label>
-
-                <select>
-
-                    <option>Casa</option>
-                    <option>Apartamento</option>
-
-                </select>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Personas en casa</label>
-
-                <input
-                    type="number"
-                    placeholder="3"
-                >
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Fuente principal</label>
-
-                <select>
-
-                    <option>Electricidad</option>
-                    <option>Gas</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ALIMENTACION -->
-
-    <section class="card">
-
-        <h3>🍎 Alimentación</h3>
-
-        <div class="habit-grid">
-
-            <div class="input-group">
-
-                <label>Tipo de alimentación</label>
-
-                <select>
-
-                    <option>Omnívora</option>
-                    <option>Vegetariana</option>
-                    <option>Vegana</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- RESIDUOS -->
-
-    <section class="card">
-
-        <h3>♻️ Residuos</h3>
-
-        <div class="habit-grid">
-
-            <div class="input-group">
-
-                <label>Uso de plásticos</label>
-
-                <select>
-
-                    <option>Bajo</option>
-                    <option>Medio</option>
-                    <option>Alto</option>
-
-                </select>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>¿Reciclas en casa?</label>
-
-                <select>
-
-                    <option>Sí</option>
-                    <option>No</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <div class="save-container">
-
-        <button
-            class="action-btn green "
-            id="saveHabitsBtn"
-        >
-            Guardar cambios
-        </button>
-
-    </div>
-</div>
-    </div>
-        <div class="success-screen" id="successScreen">
-
-     <div class="success-icon">
-        ✓
-        </div>
-
-            <h1>
-                 ¡Cambios guardados!
-             </h1>
-
-            <p>
-             Tu perfil y preferencias
-              se han actualizado correctamente.
-            </p>
-
-        <button
-            class="action-btn green"
-            id="backProfileBtn"
-            >
+        <h1>
+            ¡Cambios guardados!
+        </h1>
+
+        <p>
+            Tu perfil y preferencias
+            se han actualizado correctamente.
+        </p>
+
+        <button class="action-btn green" id="backProfileBtn">
             Volver a mi perfil
         </button>
 
     </div>
 
-   <div class="logout-modal" id="logoutModal">
 
-    <div class="logout-modal-content">
+    <!-- COMPONENTES -->
 
-        <div class="logout-success-icon">
-            ✓
-        </div>
+    <script src="assets/scripts/huella-data.js"></script>
+    <script src="assets/scripts/actualizar-habitos.js"></script>
+    <script src="assets/scripts/components.js"></script>
 
-        <h1>
-            ¡Sesión cerrada!
-        </h1>
+    <div id="logout-modal-container"></div>
 
-        <p>
-            Tu sesión se ha cerrado correctamente.
-        </p>
+</body>
 
-        <button id="confirmLogoutBtn">
-            Aceptar
-        </button>
-
-    </div>
-
-</div>
-
-</div>
-
-</main>
-
-
-    </div>
-
-       <script src="assets/scripts/actualizar-habitos.js"></script>
-
-    </body>
-
-</html> 
+</html>

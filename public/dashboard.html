@@ -2,584 +2,365 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HuellaGo Dashboard</title>
 
-    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <title>Inicio | HuellaGo</title>
+
+<link rel="stylesheet" href="assets/styles/sidebar.css">
+<link rel="stylesheet" href="assets/styles/navbar.css">
+<link rel="stylesheet" href="assets/styles/dashboard.css">
+<link rel="stylesheet" href="assets/styles/logout-modal.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
 </head>
 
 <body>
 
     <div class="app-container">
 
-        <!-- SIDEBAR -->
-
-        <aside class="sidebar">
-
-            <div>
-
-                <!-- LOGO -->
-
-                <div class="logo">
-
-                <div class="logo-img">
-
-                    <img
-                        src="assets/images/Logo.png"
-                        alt="HuellaGo"
-                    >
-
-                </div>
-
-                    <span class="sidebar-text">
-                        HuellaGo
-                    </span>
-
-                </div>
-
-                <!-- MENÚ -->
-
-                <nav class="nav-menu">
-
-                    <a href="dashboard.html" class="menu-item active">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/home.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Inicio
-                        </span>
-
-                    </a>
-
-                    <a href="mi-huella.html" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/huella.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Mi Huella
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/retos.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Retos
-                        </span>
-                    </a>
-
-                    <a href="#" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/recomendaciones.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Recomendaciones AI
-                        </span>
-                    </a>
-
-                    <a href="ranking.html" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/ranking.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Ranking
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/insignias.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Insignias
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/configuracion.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Configuración
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="menu-item">
-
-                        <div class="menu-icon">
-                            <img src="assets/icons/soporte.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Ayuda y soporte
-                        </span>
-
-                    </a>
-
-                </nav>
-
-            </div>
-
-            <!-- LOGOUT -->
-
-            <div class="logout" id="logoutBtn">
-
-                        <div class="menu-icon" >
-                            <img src="assets/icons/cerrar.png" alt="">
-                        </div>
-
-                        <span class="sidebar-text">
-                            Cerrar sesión
-                        </span>
-
-            </div>
-
-        </aside>
+        <!-- SIDEBAR (inyectado por components.js) -->
+        <div id="sidebar-container"></div>
 
         <!-- MAIN -->
 
         <main class="main-content">
 
-          <!-- HEADER -->
+            <!-- NAVBAR (inyectado por components.js) -->
+            <div id="navbar-container"></div>
 
-<header class="header">
+            <!-- CONTENT -->
 
-    <div class="header-right">
+            <div class="dashboard-content">
 
-        <!-- CAMPANA -->
+                <!-- TITULO -->
 
-        <div class="notification-btn">
+                <section class="welcome">
 
-            <img
-                src="assets/icons/campana.png"
-                alt="Notificaciones"
-            >
+                    <div>
 
-        </div>
+                        <h1>¡Bienvenido!</h1>
 
-        <!-- PERFIL -->
+                        <p>
+                            Aquí tienes un resumen de tu impacto ambiental.
+                            Continúa completando retos y reduce tu huella para seguir siendo un Eco Héroe.
+                        </p>
 
-        <div class="user-profile" id="profileBtn">
+                    </div>
 
-            <div class="avatar">
+                    <div class="date-picker">
+                        <span>20 - 26 Mayo, 2024</span>
+                        <img src="assets/icons/flecha.png" alt="" class="arrow-down">
+                    </div>
 
-                <img
-                    src="assets/icons/user.png"
-                    alt="Usuario"
-                >
+                </section>
+
+                <!-- STATS -->
+
+                <section class="stats-grid">
+
+                    <div class="card stat-card">
+
+                        <div class="stat-icon green">
+                            <img src="assets/images/hojascarlos.png" alt="">
+                        </div>
+
+                        <p class="stat-label">Huella Total</p>
+
+                        <h2 class="stat-value">
+                            2.45 <span>kg CO₂e</span>
+                        </h2>
+
+                        <div class="badge">Nivel Moderado</div>
+
+                        <p class="stat-footer green-text">
+                            ↓ 12% respecto a la semana pasada
+                        </p>
+
+                    </div>
+
+                    <div class="card stat-card">
+
+                        <div class="stat-icon yellow">
+                            <img src="assets/images/ecopuntoscarlos.png" alt="">
+                        </div>
+
+                        <p class="stat-label">EcoPuntos</p>
+
+                        <h2 class="stat-value">1250</h2>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+
+                        <p class="stat-footer green-text">
+                            +120 obtenidos esta semana
+                        </p>
+
+                    </div>
+
+                    <div class="card stat-card">
+
+                        <div class="stat-icon blue">
+                            <img src="assets/images/impactodiariocarlos.png" alt="">
+                        </div>
+
+                        <p class="stat-label">Impacto Diario</p>
+
+                        <h2 class="stat-value">
+                            0.12 <span>kg CO₂e</span>
+                        </h2>
+
+                        <div class="badge">Excelente progreso</div>
+
+                        <p class="stat-footer green-text">
+                            8% menos que ayer
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- ACTIVIDADES + GRAFICO -->
+
+                <section class="middle-grid">
+
+                    <div class="card">
+
+                        <h3>Actividades con mayor impacto</h3>
+
+                        <ul class="activity-list">
+
+                            <li>
+
+                                <div class="activity-info">
+
+                                    <div class="activity-icon">
+                                        <img src="assets/images/autoimagen.png" alt="">
+                                    </div>
+
+                                    <span>Transporte</span>
+
+                                </div>
+
+                                <div class="activity-bar">
+                                    <div class="activity-track">
+                                        <div class="activity-fill green" style="width: 48%;"></div>
+                                    </div>
+                                    <span class="activity-percent">48%</span>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="activity-info">
+
+                                    <div class="activity-icon">
+                                        <img src="assets/images/energiaimagen.png" alt="">
+                                    </div>
+
+                                    <span>Energía</span>
+
+                                </div>
+
+                                <div class="activity-bar">
+                                    <div class="activity-track">
+                                        <div class="activity-fill orange" style="width: 28%;"></div>
+                                    </div>
+                                    <span class="activity-percent">28%</span>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="activity-info">
+
+                                    <div class="activity-icon">
+                                        <img src="assets/images/Residuosimagen.png" alt="">
+                                    </div>
+
+                                    <span>Residuos</span>
+
+                                </div>
+
+                                <div class="activity-bar">
+                                    <div class="activity-track">
+                                        <div class="activity-fill blue" style="width: 14%;"></div>
+                                    </div>
+                                    <span class="activity-percent">14%</span>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="activity-info">
+
+                                    <div class="activity-icon">
+                                        <img src="assets/images/Alimentaciónimagen.png" alt="">
+                                    </div>
+
+                                    <span>Alimentación</span>
+
+                                </div>
+
+                                <div class="activity-bar">
+                                    <div class="activity-track">
+                                        <div class="activity-fill red" style="width: 10%;"></div>
+                                    </div>
+                                    <span class="activity-percent">10%</span>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="section-header">
+
+                            <h3>Evolución de tu huella</h3>
+
+                            <select select id="evolucionRango">
+                                <option value="6">Últimos 6 meses</option>
+                                <option value="3">Últimos 3 meses</option>
+                                <option value="12">Último año</option>
+                            </select>
+
+                        </div>
+
+                        <canvas id="evolucionChart"></canvas>
+
+                    </div>
+
+                </section>
+
+                <!-- EQUIVALENCIAS + RETO -->
+
+                <section class="bottom-grid">
+
+                    <div class="card">
+
+                        <h3>Equivalencias visuales</h3>
+
+                        <div class="equivalencias-grid">
+
+                            <div class="equivalencia-item">
+
+                                <div class="equivalencia-icon green">
+                                    <img src="assets/images/arbolimagen.png" alt="">
+                                </div>
+
+                                <h4>18</h4>
+                                <p>Árboles plantados</p>
+
+                            </div>
+
+                            <div class="equivalencia-item">
+
+                                <div class="equivalencia-icon blue">
+                                    <img src="assets/images/bicicleta.png" alt="">
+                                </div>
+
+                                <h4>120</h4>
+                                <p>Kilómetros en bicicleta</p>
+
+                            </div>
+
+                            <div class="equivalencia-item">
+
+                                <div class="equivalencia-icon cyan">
+                                    <img src="assets/images/Residuosimagen.png" alt="">
+                                </div>
+
+                                <h4>45</h4>
+                                <p>Kilogramos reciclados</p>
+
+                            </div>
+
+                            <div class="equivalencia-item">
+
+                                <div class="equivalencia-icon yellow">
+                                    <img src="assets/images/energiaimagen.png" alt="">
+                                </div>
+
+                                <h4>80</h4>
+                                <p>kWh ahorrados</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card reto-card">
+
+                        <div class="section-header">
+
+                            <h3>Reto activo</h3>
+
+                            <span class="badge">En progreso</span>
+
+                        </div>
+
+                        <div class="reto-content">
+
+                            <img src="assets/images/bicicleta.png" alt="" class="reto-img">
+
+                            <div class="reto-info">
+
+                                <h4>Muévete en bicicleta</h4>
+
+                                <p>
+                                    Completa 3 recorridos en bicicleta durante esta semana para obtener EcoPuntos
+                                    adicionales.
+                                </p>
+
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="width: 66%;"></div>
+                                </div>
+
+                                <span class="reto-progress-text">2 de 3 recorridos completados</span>
+
+                                <button class="action-btn green full-width" onclick="window.location.href='retos.html'">
+                                    Ver reto
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- DESCARGAR REPORTE -->
+
+                <section class="dashboard-report">
+                    <button class="action-btn green" id="descargarReporteBtn">
+                        ⬇ Descargar reporte
+                    </button>
+                </section>
 
             </div>
-
-            <div class="user-info">
-
-                <h4>Mateo</h4>
-
-                <span>
-                    Nivel 5 · Eco Heroe
-                </span>
-
-            </div>
-
-            <div class="profile-arrow">
-
-                <img
-                    src="assets/icons/flecha.png"
-                    alt="Abrir perfil"
-                >
-
-            </div>
-
-            <div class="profile-menu" id="profileMenu">
-
-                <a href="mi-huella.html">
-                       Mi perfil
-                </a>
-
-                <a href="#" id="logoutMenuBtn">
-                       Cerrar sesión
-                </a>
-
-            </div>
-            
-        </div>
-
-    </div>
-
-</header>
-<!-- CONTENIDO -->
-<div class="dashboard-content">
-
-    <!-- BIENVENIDA -->
-
-    <section class="welcome">
-
-        <div>
-
-            <h1>Bienvenido, Mateo</h1>
-
-            <p>
-                Aquí tienes un resumen de tu impacto ambiental.
-            </p>
-
-        </div>
-
-        <div class="date-card">
-
-            <img src="assets/icons/calendario.png" alt="">
-
-            <span>
-                20 - 26 Mayo, 2024
-            </span>
-
-            <img src="assets/icons/flecha.png" alt="">
-
-        </div>
-
-    </section>
-
-    <!-- KPIS PRINCIPALES -->
-
-    <section class="stats-grid">
-
-        <!-- HUELLA TOTAL -->
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <img src="assets/icons/huella-card.png" alt="">
-            </div>
-
-            <div class="stat-info">
-
-                <small>Huella Total</small>
-
-                <h2>2.45 <span>kg CO₂e</span></h2>
-
-                <div class="badge">
-                    Nivel Moderado
-                </div>
-
-                <p class="card-extra">
-                    ↓ 12% vs la semana pasada
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- ECO PUNTOS -->
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <img src="assets/icons/ecopuntos.png" alt="">
-            </div>
-
-            <div class="stat-info">
-
-                <small>Eco puntos</small>
-
-                <h2>1250</h2>
-
-                <div class="mini-progress">
-
-                    <div class="mini-bar eco-bar"></div>
-
-                </div>
-
-                <p class="card-extra">
-                    ↑ +120 esta semana
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- IMPACTO DIARIO -->
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <img src="assets/icons/impacto.png" alt="">
-            </div>
-
-            <div class="stat-info">
-
-                <small>Impacto Diario (Hoy)</small>
-
-                <h2>0.12 <span>kg CO₂e</span></h2>
-
-                <p class="card-extra">
-                    ↓ 8% vs ayer
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ACTIVIDADES + EVOLUCIÓN -->
-
-    <section class="analytics-grid">
-
-        <!-- MAYOR IMPACTO -->
-
-        <div class="analytics-card">
-
-            <h3>
-                Actividades con mayor impacto
-            </h3>
-
-            <div class="impact-item">
-
-                <span>🚗 Transporte</span>
-
-                <strong>48%</strong>
-
-            </div>
-
-            <div class="impact-bar">
-
-                <div class="impact-fill transport"></div>
-
-            </div>
-
-            <div class="impact-item">
-
-                <span>⚡ Energía</span>
-
-                <strong>28%</strong>
-
-            </div>
-
-            <div class="impact-bar">
-
-                <div class="impact-fill energy"></div>
-
-            </div>
-
-            <div class="impact-item">
-
-                <span>♻️ Residuos</span>
-
-                <strong>14%</strong>
-
-            </div>
-
-            <div class="impact-bar">
-
-                <div class="impact-fill waste"></div>
-
-            </div>
-
-            <div class="impact-item">
-
-                <span>🍎 Alimentación</span>
-
-                <strong>10%</strong>
-
-            </div>
-
-            <div class="impact-bar">
-
-                <div class="impact-fill food"></div>
-
-            </div>
-
-        </div>
-
-        <!-- EVOLUCION -->
-
-        <div class="analytics-card">
-
-            <div class="card-header">
-
-                <h3>
-                    Evolución de tu huella
-                </h3>
-
-                <select>
-
-                    <option>
-                        Últimos 6 meses
-                    </option>
-
-                </select>
-
-            </div>
-
-            <div class="chart-placeholder">
-
-                <canvas id="evolutionChart"></canvas>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- EQUIVALENCIAS + RETO -->
-
-    <section class="analytics-grid">
-
-        <!-- EQUIVALENCIAS -->
-
-        <div class="analytics-card">
-
-            <h3>
-                Equivalencias visuales
-            </h3>
-
-            <div class="equivalences">
-
-                <div class="equivalence-box">
-
-                    <span class="eco-icon">🌳</span>
-
-                    <strong>18</strong>
-
-                    <small>
-                        árboles plantados
-                    </small>
-
-                </div>
-
-                <div class="equivalence-box">
-
-                    <span class="eco-icon">🚲</span>
-
-                    <strong>120</strong>
-
-                    <small>
-                        km en bicicleta
-                    </small>
-
-                </div>
-
-                <div class="equivalence-box">
-
-                    <span class="eco-icon">♻️</span>
-
-                    <strong>45</strong>
-
-                    <small>
-                        kg reciclados
-                    </small>
-
-                </div>
-
-                <div class="equivalence-box">
-
-                    <span class="eco-icon">⚡</span>
-
-                    <strong>80</strong>
-
-                    <small>
-                        kWh ahorrados
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- RETO ACTIVO -->
-
-        <div class="challenge-card">
-
-            <h4>
-                Reto activo
-            </h4>
-
-            <img
-                src="assets/images/bicicleta.png"
-                alt=""
-                class="bike-img"
-            >
-
-            <h3>
-                Muévete en bici
-            </h3>
-
-            <p>
-                3 veces esta semana
-            </p>
-
-            <div class="progress-bar">
-
-                <div class="progress"></div>
-
-            </div>
-
-            <span>
-                2 / 3 completado
-            </span>
-
-            <button>
-                Ver reto
-            </button>
-
-        </div>
-
-        <!-- Logout -->
-
-        <div class="logout-modal" id="logoutModal">
-
-        <div class="logout-modal-content">
-
-             <div class="logout-success-icon">
-                    ✓
-             </div>
-
-             <h1>
-                 ¡Sesión cerrada!
-             </h1>
-
-             <p>
-                  Tu sesión se ha cerrado correctamente.
-             </p>
-
-            <button
-                class="action-btn green"
-                id="confirmLogoutBtn"  >
-                 Aceptar
-        </button>
-
-    </div>
-
-</div>
-
-    </section>
-
-</div>
 
         </main>
 
     </div>
 
+    <script src="assets/scripts/components.js"></script>
+    <script src="assets/scripts/retos-data.js"></script>
+    <script src="assets/scripts/insignias-data.js"></script>
     <script src="assets/scripts/dashboard.js"></script>
+    <script src="assets/scripts/reporte.js"></script>
+
+    <div id="logout-modal-container"></div>
 
 </body>
 

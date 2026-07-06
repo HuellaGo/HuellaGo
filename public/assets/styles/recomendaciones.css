@@ -1,0 +1,396 @@
+/* =====================================
+   RECOMENDACIONES IA
+===================================== */
+
+.reco-hero {
+    margin-bottom: 20px;
+}
+
+.reco-hero-info p {
+    color: #6b7280;
+    margin-top: 6px;
+    max-width: 640px;
+}
+
+/* BANNER PRIORITARIO */
+
+.reco-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(90deg, #edf9ef, #f0fdf4);
+    border: 1px solid #bbf7d0;
+    border-radius: 18px;
+    padding: 16px 22px;
+    margin-bottom: 20px;
+}
+
+.reco-banner-icon {
+    font-size: 24px;
+}
+
+.reco-banner-texto {
+    flex: 1;
+}
+
+.reco-banner-texto strong {
+    color: #166534;
+    font-size: 14px;
+}
+
+.reco-banner-texto p {
+    color: #374151;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/* TABS */
+
+.reco-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.reco-tab {
+    border: none;
+    background: #fff;
+    color: #6b7280;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
+}
+
+.reco-tab.active {
+    background: #169744;
+    color: #fff;
+}
+
+/* TOOLBAR */
+
+.reco-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px 18px;
+    flex: 1;
+    min-width: 240px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+}
+
+.search-box img {
+    width: 16px;
+    height: 16px;
+    opacity: .5;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.filter-wrapper {
+    position: relative;
+}
+
+.filter-btn,
+.sort-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+}
+
+.filter-btn img,
+.sort-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+.filter-btn:hover,
+.sort-btn:hover {
+    transform: translateY(-1px);
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    z-index: 20;
+    min-width: 180px;
+}
+
+.filter-dropdown.show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-dropdown label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+}
+
+/* GRID DE RECOMENDACIONES */
+
+.reco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.reco-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .2s ease;
+}
+
+.reco-card:hover {
+    transform: translateY(-3px);
+}
+
+.reco-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reco-categoria {
+    background: #edf9ef;
+    color: #169744;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.reco-impacto {
+    font-size: 13px;
+    font-weight: 700;
+    color: #169744;
+}
+
+.reco-card h3 {
+    font-size: 17px;
+    color: #1f2937;
+}
+
+.reco-card p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.reco-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.reco-link-btn {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.reco-link-btn:hover {
+    background: #f9fafb;
+}
+
+.reco-link-btn.destacado {
+    background: #169744;
+    color: #fff;
+    border-color: #169744;
+}
+
+.reco-link-btn.destacado:hover {
+    background: #12793a;
+}
+
+/* HISTORIAL */
+
+.reco-card.historial {
+    opacity: .95;
+}
+
+.reco-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 999px;
+}
+
+.reco-badge.realizada {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.reco-badge.convertida {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.historial-fecha-reco {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ESTADOS VACÍOS / INFO */
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    margin-bottom: 24px;
+}
+
+.info-box img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.info-box p {
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* MODAL VER EXPLICACIÓN */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 18px;
+    padding: 26px;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.modal-box h3 {
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.modal-impacto {
+    font-size: 13px;
+    font-weight: 700;
+    color: #169744;
+}
+
+.modal-box p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.modal-box .reto-detalle-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .reco-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar-actions {
+        justify-content: space-between;
+    }
+
+    .filter-dropdown {
+        right: auto;
+        left: 0;
+    }
+
+}
