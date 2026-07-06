@@ -206,6 +206,7 @@
 }
 
 .reto-card-image {
+    position: relative; 
     height: 170px;
     display: flex;
     justify-content: center;

@@ -154,6 +154,40 @@ function actualizarNivelNavbar() {
 
 }
 
+// ===== NOMBRE REAL EN EL NAVBAR =====
+// Mismo problema que el nivel: "Mateo" venia hardcodeado en navbar.html,
+// asi que si editabas tu nombre en mi-perfil.html (que lo guarda en
+// localStorage bajo la key "huellago_profile", campo `nombre`), el navbar
+// de las demas paginas se quedaba con el nombre viejo.
+//
+// No depende de ningun script adicional: lee directo del localStorage,
+// asi que funciona en cualquier pagina que ya tenga el navbar compartido.
+// Si todavia no existe ese registro (usuario que nunca entro a mi-perfil.html),
+// no hace nada y se queda el nombre por defecto del navbar.
+
+function actualizarNombreNavbar() {
+
+    const nombreSpan = document.getElementById("navUserName");
+    if (!nombreSpan) return;
+
+    try {
+
+        const raw = localStorage.getItem("huellago_profile");
+        if (!raw) return;
+
+        const profile = JSON.parse(raw);
+        if (profile?.nombre) {
+            nombreSpan.textContent = profile.nombre;
+        }
+
+    } catch (error) {
+
+        console.error("No se pudo leer el nombre de perfil para el navbar:", error);
+
+    }
+
+}
+
 async function initLayout() {
 
     await Promise.all([
@@ -167,6 +201,7 @@ async function initLayout() {
     initProfileMenu();
     initLogout();
     actualizarNivelNavbar();
+    actualizarNombreNavbar();
 
 }
 

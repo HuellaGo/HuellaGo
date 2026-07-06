@@ -17,92 +17,13 @@
 
     <div class="app-container">
 
-        <!-- SIDEBAR -->
-
-        <aside class="sidebar">
-
-            <div>
-
-                <div class="logo">
-                    <div class="logo-img">
-                        <img src="assets/images/Logo.png" alt="HuellaGo">
-                    </div>
-                    <span class="sidebar-text">HuellaGo</span>
-                </div>
-
-                <nav class="nav-menu">
-
-                    <a href="dashboard.html" class="menu-item">
-                        <div class="menu-icon"><img src="assets/icons/home.png" alt=""></div>
-                        <span class="sidebar-text">Inicio</span>
-                    </a>
-
-                    <a href="mi-huella.html" class="menu-item">
-                        <div class="menu-icon"><img src="assets/icons/huella.png" alt=""></div>
-                        <span class="sidebar-text">Mi Huella</span>
-                    </a>
-
-                    <a href="retos.html" class="menu-item">
-                        <div class="menu-icon"><img src="assets/icons/retos.png" alt=""></div>
-                        <span class="sidebar-text">Retos</span>
-                    </a>
-
-                    <a href="recomendaciones.html" class="menu-item">
-                        <div class="menu-icon"><img src="assets/icons/recomendaciones.png" alt=""></div>
-                        <span class="sidebar-text">Recomendaciones AI</span>
-                    </a>
-
-                    <a href="ranking.html" class="menu-item">
-                        <div class="menu-icon"><img src="assets/icons/ranking.png" alt=""></div>
-                        <span class="sidebar-text">Ranking</span>
-                    </a>
-
-                    <a href="insignias.html" class="menu-item active">
-                        <div class="menu-icon"><img src="assets/icons/insignias.png" alt=""></div>
-                        <span class="sidebar-text">Insignias</span>
-                    </a>
-
-                </nav>
-
-            </div>
-
-            <div class="logout" id="logoutBtn">
-                <div class="menu-icon"><img src="assets/icons/cerrar.png" alt=""></div>
-                <span class="sidebar-text">Cerrar sesión</span>
-            </div>
-
-        </aside>
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <div id="sidebar-container"></div>
 
         <!-- MAIN -->
 
         <main class="main-content">
 
-            <header class="header">
-                <button class="hamburger" id="hamburgerBtn">☰</button>
-
-                <div class="header-right">
-
-                    <div class="notification-btn">
-                        <img src="assets/icons/campana.png" alt="Notificaciones">
-                    </div>
-
-                    <div class="user-profile" id="profileBtn">
-                        <div class="avatar"><img src="assets/icons/user.png" alt="Usuario"></div>
-                        <div class="user-info">
-                            <h4>Mateo</h4>
-                            <span id="headerNivelTexto">Nivel 5 · Guardián Verde</span>
-                        </div>
-                        <div class="profile-arrow"><img src="assets/icons/flecha.png" alt="Abrir perfil"></div>
-                        <div class="profile-menu" id="profileMenu">
-                            <a href="mi-perfil.html">Mi perfil</a>
-                            <a href="#" id="logoutMenuBtn">Cerrar sesión</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </header>
+            <div id="navbar-container"></div>
 
             <div class="dashboard-content">
                 <div class="insignias-container">
@@ -215,17 +136,7 @@
 
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- MODAL DE CIERRE DE SESIÓN -->
-
-    <div class="logout-modal" id="logoutModal">
-        <div class="logout-modal-content">
-            <div class="logout-success-icon">✓</div>
-            <h1>¡Sesión cerrada!</h1>
-            <p>Tu sesión se ha cerrado correctamente.</p>
-            <button id="confirmLogoutBtn">Aceptar</button>
-        </div>
-    </div>
-
+    <script src="assets/scripts/components.js"></script>
     <script src="assets/scripts/huella-data.js"></script>
     <script src="assets/scripts/retos-data.js"></script>
     <script src="assets/scripts/insignias-data.js"></script>

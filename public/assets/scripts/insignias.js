@@ -1,60 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===== SIDEBAR / LOGOUT / PERFIL (mismo patrón que ranking.js) =====
-
-    const logoutBtn = document.getElementById("logoutBtn");
-    const logoutModal = document.getElementById("logoutModal");
-    const confirmLogoutBtn = document.getElementById("confirmLogoutBtn");
-
-    const profileBtn = document.getElementById("profileBtn");
-    const profileMenu = document.getElementById("profileMenu");
-    const logoutMenuBtn = document.getElementById("logoutMenuBtn");
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const sidebar = document.querySelector(".sidebar");
-    const sidebarOverlay = document.getElementById("sidebarOverlay");
-
-hamburgerBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    sidebarOverlay.classList.toggle("active");
-});
-
-document.addEventListener("click", (e) => {
-    if (!sidebar.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-        sidebar.classList.remove("open");
-        sidebarOverlay.classList.remove("active");
-    }
-});
-
-sidebarOverlay.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    sidebarOverlay.classList.remove("active");
-});
-
-    profileBtn.addEventListener("click", () => profileMenu.classList.toggle("show"));
-
-    function abrirModalLogout() {
-        logoutModal.classList.add("show");
-    }
-
-    logoutBtn.addEventListener("click", abrirModalLogout);
-    logoutMenuBtn.addEventListener("click", (e) => { e.preventDefault(); abrirModalLogout(); });
-
-    confirmLogoutBtn.addEventListener("click", () => {
-        localStorage.clear();
-        window.location.href = "index.html";
-    });
-
-    logoutModal.addEventListener("click", (e) => {
-        if (e.target === logoutModal) logoutModal.classList.remove("show");
-    });
-
-document.querySelectorAll(".menu-item").forEach(item => {
-    item.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-        sidebarOverlay.classList.remove("active");
-    });
-});
-
     // ===== TABS (Insignias / Logros) =====
 
     document.querySelectorAll(".tab-btn").forEach((btn) => {
@@ -132,11 +77,9 @@ function pintarProgreso(stats) {
             `${stats.puntosTotales.toLocaleString("es-PE")} / ${infoNivel.siguiente.minPuntos.toLocaleString("es-PE")} pts para "${infoNivel.siguiente.nombre}"`;
     }
 
-    // Header (nombre de nivel junto al avatar)
-    const headerNivel = document.getElementById("headerNivelTexto");
-    if (headerNivel) {
-        headerNivel.textContent = `Nivel ${infoNivel.actual.nivel} · ${infoNivel.actual.nombre}`;
-    }
+    // Nota: el nombre/nivel junto al avatar del navbar ya lo actualiza
+    // automáticamente components.js (actualizarNivelNavbar), no hace falta
+    // tocarlo aquí.
 
 }
 

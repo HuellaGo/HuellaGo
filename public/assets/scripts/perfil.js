@@ -74,6 +74,10 @@ function showToast(message, isError) {
 }
 
 /* ---------- Logout (HU49) ---------- */
+// NOTA: ya no se usa como listener directo de #logoutBtn en mi-perfil.html.
+// Ese boton ahora lo maneja components.js (initLogout), que muestra el
+// modal de confirmacion compartido con el resto de paginas antes de cerrar
+// sesion, en lugar de salir de inmediato sin preguntar.
 
 function handleLogout() {
     try {
@@ -97,14 +101,33 @@ function initMiPerfil() {
     const huellaEl = document.getElementById("profileHuella");
 
     if (nameEl) nameEl.textContent = `${profile.nombre} ${profile.apellido}`;
-    if (subtitleEl) {
-        subtitleEl.innerHTML = `${profile.nivelNombre} | <span class="level-highlight">nivel ${profile.nivel}</span>`;
-    }
-    if (ecoPuntosEl) ecoPuntosEl.textContent = profile.ecoPuntos;
-    if (huellaEl) huellaEl.textContent = `${profile.huellaActual} t CO2e`;
 
-    const logoutBtn = document.getElementById("logoutBtn");
-    if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
+    // Nivel y EcoPuntos reales: antes se leian de profile.nivelNombre /
+    // profile.nivel / profile.ecoPuntos, valores fijos guardados en
+    // DEFAULT_PROFILE que nunca se actualizaban con los retos completados
+    // (por eso se veia "Eco Iniciado | nivel 1" aunque el dashboard y el
+    // navbar ya mostraran un nivel mas alto). Usamos la misma fuente que
+    // el resto de la app (insignias-data.js) para que coincida siempre.
+    let nivelNombre = profile.nivelNombre;
+    let nivelNumero = profile.nivel;
+    let ecoPuntos = profile.ecoPuntos;
+
+    if (typeof obtenerEstadisticasSeguras === "function") {
+        try {
+            const { stats } = obtenerEstadisticasSeguras();
+            nivelNombre = stats.nivelActual.nombre;
+            nivelNumero = stats.nivelActual.nivel;
+            ecoPuntos = stats.puntosTotales;
+        } catch (error) {
+            console.error("No se pudo calcular el nivel real para mi-perfil:", error);
+        }
+    }
+
+    if (subtitleEl) {
+        subtitleEl.innerHTML = `${nivelNombre} | <span class="level-highlight">nivel ${nivelNumero}</span>`;
+    }
+    if (ecoPuntosEl) ecoPuntosEl.textContent = ecoPuntos;
+    if (huellaEl) huellaEl.textContent = `${profile.huellaActual} t CO2e`;
 
     // El hamburger no abre un sidebar aca (esta vista es standalone por diseño).
     // Lo mandamos de vuelta al dashboard. Cambia el destino si prefieres otra cosa.
