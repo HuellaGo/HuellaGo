@@ -1,523 +1,241 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Huella | HuellaGo</title>
 
-<title>Mi Huella | HuellaGo</title>
-<link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
 <link rel="stylesheet" href="assets/styles/mi-huella.css">
-
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
 
 </head>
 
 <body>
 
-<div class="app-container">
+    <div class="app-container">
 
+        <div id="sidebar-container"></div>
 
-<!-- SIDEBAR -->
+        <main class="main-content">
 
-<aside class="sidebar">
+            <div id="navbar-container"></div>
 
-    <div>
+            <div class="dashboard-content" id="formContainer">
 
-        <!-- LOGO -->
+                <!-- TITULO -->
 
-        <div class="logo">
+                <section class="welcome">
 
-            <div class="logo-img">
-
-                <img
-                    src="assets/images/Logo.png"
-                    alt="HuellaGo"
-                >
-
-            </div>
-
-            <span class="sidebar-text">
-                HuellaGo
-            </span>
-
-        </div>
-
-        <!-- MENÚ -->
-
-        <nav class="nav-menu">
-
-            <a href="dashboard.html" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/home.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Inicio
-                </span>
-
-            </a>
-
-            <a href="mi-huella.html" class="menu-item active">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/huella.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Mi Huella
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/retos.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Retos
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/recomendaciones.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Recomendaciones AI
-                </span>
-
-            </a>
-
-            <a href="ranking.html" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/ranking.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Ranking
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/insignias.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Insignias
-                </span>
-
-            </a>
-
-            <a href="#" class="menu-item">
-
-                <div class="menu-icon">
-                    <img src="assets/icons/configuracion.png" alt="">
-                </div>
-
-                <span class="sidebar-text">
-                    Configuración
-                </span>
-
-            </a>
-
-        </nav>
-
-    </div>
-
-    <!-- LOGOUT -->
-
-    <div class="logout" id="logoutBtn">
-
-        <div class="menu-icon">
-            <img src="assets/icons/cerrar.png" alt="">
-        </div>
-
-        <span class="sidebar-text" >
-            Cerrar sesión
-        </span>
-
-    </div>
-
-</aside>
-
-<!-- MAIN -->
-
-<main class="main-content">
-
-    <!-- HEADER -->
-
-    <header class="header">
-
-        <div class="header-right">
-
-            <div class="notification-btn">
-
-                <img
-                    src="assets/icons/campana.png"
-                    alt="Notificaciones"
-                >
-
-            </div>
-
-            <div class="user-profile" id="profileBtn">
-
-                <div class="avatar">
-
-                    <img
-                        src="assets/icons/user.png"
-                        alt="Usuario"
-                    >
-
-                </div>
-
-                <div class="user-info">
-
-                    <h4>Mateo</h4>
-
-                    <span>
-                        Nivel 5 · Eco Heroe
-                    </span>
-
-                </div>
-
-                <div class="profile-arrow">
-
-                    <img
-                        src="assets/icons/flecha.png"
-                        alt=""
-                    >
-                </div>
-                <div class="profile-menu" id="profileMenu">
-                        <a href="mi-huella.html">
-                           Mi perfil
-                        </a>
-                        
-                        <a href="#" id="logoutMenuBtn">
-                            Cerrar sesión
-                        </a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
-
-    <!-- CONTENT -->
-
-    <div class="dashboard-content" id="formContainer">
-
-        <!-- TITULO -->
-
-        <section class="welcome">
-
-            <div>
-
-                <h1>Mi Huella</h1>
-
-                <p>
-                    Gestiona tu medición y mantén actualizado tu perfil ecológico.
-                </p>
-
-            </div>
-
-            <button class="recalculate-btn" id="recalculateBtn">
-                Recalcular Huella
-            </button>
-
-        </section>
-
-        <!-- RESUMEN -->
-
-        <section class="summary-card">
-
-            <div class="summary-info">
-
-                <small>
-                    Última medición
-                </small>
-
-                <h2>
-                    2.45
-                    <span>kg CO₂e</span>
-                </h2>
-
-                <div class="badge">
-                    Nivel Moderado
-                </div>
-
-                <p>
-                    Actualizado el 20 Mayo 2024
-                </p>
-
-            </div>
-
-            <div class="summary-status">
-
-                <div class="status-circle">
-                    
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- GRID -->
-
-        <section class="huella-grid">
-
-            <!-- PERFIL -->
-
-            <div class="card">
-
-                <h3>Perfil ecológico</h3>
-
-                <p class="card-subtitle">
-                    Información registrada
-                </p>
-
-                <ul class="profile-list">
-
-                    <li>
-                        <span>🎯 Objetivos</span>
-                        <span class="check">✓</span>
-                    </li>
-
-                    <li>
-                        <span>🚲 Transporte</span>
-                        <span class="check">✓</span>
-                    </li>
-
-                    <li>
-                        <span>⚡ Energía</span>
-                        <span class="check">✓</span>
-                    </li>
-
-                    <li>
-                        <span>🍎 Alimentación</span>
-                        <span class="check">✓</span>
-                    </li>
-
-                    <li>
-                        <span>♻️ Residuos</span>
-                        <span class="check">✓</span>
-                    </li>
-
-                </ul>
-
-                <div class="profile-progress">
-
-                    <div class="progress-track">
-
-                        <div class="progress-fill"></div>
-
+                    <div>
+                        <h1>Mi Huella</h1>
+                        <p>Gestiona tu medición y mantén actualizado tu perfil ecológico.</p>
                     </div>
 
-                    <span>100%</span>
-
-                </div>
-
-            </div>
-
-            <!-- ACCIONES -->
-
-            <div class="card">
-
-                <h3>Acciones rápidas</h3>
-
-                <div class="action-card">
-
-                    <h4>Actualizar hábitos</h4>
-
-                    <p>
-                        Modifica tu información actual sin recalcular toda tu huella.
-                    </p>
-
-                    <button class="action-btn" id="updateHabitsBtn">
-                        Actualizar
+                    <button class="recalculate-btn" id="recalculateBtn">
+                        Recalcular Huella
                     </button>
 
-                </div>
+                </section>
 
-                <div class="action-card">
+                <!-- ESTADO SIN MEDICIÓN (primera vez) -->
 
-                    <h4>Recalcular huella</h4>
-
+                <section class="card info-box" id="sinMedicionCard" style="display: none;">
+                    <img src="assets/images/mihuella.png" alt="">
                     <p>
-                        Realiza una nueva medición completa utilizando el cuestionario.
+                        Todavía no tienes ninguna medición registrada. Dale a "Recalcular Huella" para hacer tu primera
+                        medición.
                     </p>
+                </section>
 
-                    <button class="action-btn green" id="recalculateSmallBtn">
-                        Recalcular
-                    </button>
+                <div id="huellaContenido" style="display: none;">
+
+                    <!-- RESUMEN -->
+
+                    <section class="summary-card">
+
+                        <div class="summary-info">
+
+                            <small>Última medición</small>
+
+                            <h2><span id="huellaValor">0</span> <span>kg CO₂e</span></h2>
+
+                            <div class="badge" id="huellaNivel">Nivel Moderado</div>
+
+                            <p id="huellaFecha">Actualizado el —</p>
+
+                        </div>
+
+                        <div class="summary-status">
+                            <div class="status-circle">
+                                <img src="assets/images/hojacargando.png" alt="">
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- GRID -->
+
+                    <section class="huella-grid">
+
+                        <div class="card">
+
+                            <h3>Perfil ecológico</h3>
+                            <p class="card-subtitle">Información registrada</p>
+
+                            <ul class="profile-list">
+
+                                <li>
+                                    <span class="profile-item-label">
+                                        Objetivos
+                                    </span>
+                                    <span class="check"><img src="assets/icons/check.png" alt=""></span>
+                                </li>
+
+                                <li>
+                                    <span class="profile-item-label">
+                                        Transporte
+                                    </span>
+                                </li>
+
+                                <li>
+                                    <span class="profile-item-label">
+                                        Energía
+                                    </span>
+                                    <span class="check"><img src="assets/icons/check.png" alt=""></span>
+                                </li>
+
+                                <li>
+                                    <span class="profile-item-label">
+                                        Alimentación
+                                    </span>
+                                    <span class="check"><img src="assets/icons/check.png" alt=""></span>
+                                </li>
+
+                                <li>
+                                    <span class="profile-item-label">
+                                        Residuos
+                                    </span>
+                                    <span class="check"><img src="assets/icons/check.png" alt=""></span>
+                                </li>
+
+                            </ul>
+
+                            <div class="profile-progress">
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="width: 100%;"></div>
+                                </div>
+                                <span>100%</span>
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+
+                            <h3>Acciones rápidas</h3>
+
+                            <div class="action-card">
+
+                                <h4>Actualizar hábitos</h4>
+
+                                <p>Modifica tu información actual sin recalcular toda tu huella.</p>
+
+                                <button class="action-btn" id="updateHabitsBtn">
+                                    Actualizar
+                                </button>
+
+                            </div>
+
+                            <div class="action-card">
+
+                                <h4>Recalcular huella</h4>
+
+                                <p>Realiza una nueva medición completa utilizando el cuestionario.</p>
+
+                                <button class="action-btn green" id="recalculateSmallBtn">
+                                    Recalcular
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- HISTORIAL -->
+
+                    <section class="card history-card">
+
+                        <div class="section-header">
+                            <h3>Historial de mediciones</h3>
+                            <button>Ver todo</button>
+                        </div>
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Huella</th>
+                                    <th>Cambio</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="historialBody">
+                                <!-- se llena dinámicamente -->
+                            </tbody>
+
+                        </table>
+
+                    </section>
+
+                    <!-- INSIGHTS -->
+
+                    <section class="huella-grid">
+
+                        <div class="card insight-card">
+
+                            <h3>Principal fuente de emisiones</h3>
+                            <h2 id="insightFuente">—</h2>
+                            <p id="insightFuenteTexto">Todavía no hay suficiente información.</p>
+
+                        </div>
+
+                        <div class="card insight-card">
+
+                            <h3>Recomendación personalizada</h3>
+
+                            <p id="insightRecomendacion">
+                                Registra tus hábitos para recibir una recomendación personalizada.
+                            </p>
+
+                            <button class="action-btn green" onclick="window.location.href='recomendaciones.html'">
+                                Ver recomendación
+                            </button>
+
+                        </div>
+
+                    </section>
 
                 </div>
 
             </div>
 
-        </section>
-
-        <!-- HISTORIAL -->
-
-        <section class="card history-card">
-
-            <div class="section-header">
-
-                <h3>Historial de mediciones</h3>
-
-                <button>
-                    Ver todo
-                </button>
-
-            </div>
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Fecha</th>
-                        <th>Huella</th>
-                        <th>Cambio</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-
-                        <td>20 Mayo 2024</td>
-                        <td>2.45 kg</td>
-                        <td class="green-text">
-                            ↓ 12%
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>13 Mayo 2024</td>
-                        <td>2.78 kg</td>
-                        <td class="green-text">
-                            ↓ 8%
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>06 Mayo 2024</td>
-                        <td>3.01 kg</td>
-                        <td class="green-text">
-                            ↓ 5%
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>28 Abril 2024</td>
-                        <td>3.22 kg</td>
-                        <td class="red-text">
-                            ↑ 4%
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <!-- INSIGHTS -->
-
-        <section class="huella-grid">
-
-            <div class="card insight-card">
-
-                <h3>
-                    Principal fuente de emisiones
-                </h3>
-
-                <h2>
-                    Transporte
-                </h2>
-
-                <p>
-                    Representa el 48% de tu huella total.
-                </p>
-
-            </div>
-
-            <div class="card insight-card">
-
-                <h3>
-                    Recomendación personalizada
-                </h3>
-
-                <p>
-
-                    Si utilizas bicicleta dos veces más por semana podrías reducir tu huella aproximadamente un 14%.
-
-                </p>
-
-                <button class="action-btn green">
-                    Ver recomendación
-                </button>
-
-            </div>
-
-            <div class="logout-modal" id="logoutModal">
-
-           <div class="logout-modal-content">
-
-            <div class="logout-success-icon">
-               ✓
-            </div>
-
-            <h1>
-                  ¡Sesión cerrada!
-            </h1>
-
-            <p>
-                   Tu sesión se ha cerrado correctamente.
-            </p>
-
-            <button id="confirmLogoutBtn">
-                  Aceptar
-            </button>
+        </main>
 
     </div>
 
-</div>
-
-        </section>
-
-    </div>
-
-</main>
-
-
-</div>
-
-<script src="assets/scripts/mi-huella.js"></script>
+    <script src="assets/scripts/components.js"></script>
+    <script src="assets/scripts/huella-data.js"></script>
+    <script src="assets/scripts/retos-data.js"></script>
+    <script src="assets/scripts/insignias-data.js"></script>
+    <script src="assets/scripts/mi-huella.js"></script>
+    <div id="logout-modal-container"></div>
 
 </body>
 

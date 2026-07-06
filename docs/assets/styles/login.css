@@ -220,3 +220,51 @@ body{
         font-size:32px;
     }
 }
+
+/* ===== POPUP: "OLVIDÉ MI CONTRASEÑA" (simulado) ===== */
+
+.forgot-modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+}
+
+.forgot-modal-overlay.show{
+    display:flex;
+}
+
+.forgot-modal{
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    max-width:380px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.forgot-modal-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.forgot-modal h3{
+    font-size:22px;
+    color:#243B53;
+    margin-bottom:10px;
+}
+
+.forgot-modal p{
+    color:#6B7280;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:24px;
+}
+
+.forgot-modal .btn-primary{
+    width:100%;
+}

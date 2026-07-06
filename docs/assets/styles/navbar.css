@@ -1,0 +1,127 @@
+.header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    font-size: 22px;
+    color: var(--color-text);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.notification-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.notification-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.user-profile:hover {
+    background-color: var(--color-bg);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--color-primary-light);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.user-info span {
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+.profile-arrow {
+    width: 12px;
+    height: 12px;
+    opacity: 0.5;
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    min-width: 160px;
+    padding: 8px;
+    flex-direction: column;
+}
+
+.profile-menu.show {
+    display: flex;
+}
+
+.profile-menu a {
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.profile-menu a:hover {
+    background-color: var(--color-bg);
+}
+
+@media (max-width: 900px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+}

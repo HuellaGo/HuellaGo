@@ -1,0 +1,709 @@
+/* ============================================================
+   PERFIL.CSS
+   Estilos para: mi-perfil.html, editar-perfil.html, ajustes.html
+   Estas vistas NO usan sidebar/navbar (son standalone por diseño),
+   por eso definimos aquí nuestras propias variables de color.
+   Si ya tienes un archivo global de variables, puedes borrar este
+   bloque :root y estas páginas heredarán el tuyo sin problema.
+   ============================================================ */
+
+:root {
+    --color-primary: #16a34a;
+    --color-primary-dark: #15803d;
+    --color-primary-light: #dcfce7;
+    --color-white: #ffffff;
+    --color-bg: #f5f6f8;
+    --color-border: #e5e7eb;
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-red: #ef4444;
+    --color-red-light: #fee2e2;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.profile-body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.profile-page {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    padding-bottom: 40px;
+    position: relative;
+}
+
+/* ===== TOPBAR ===== */
+
+.profile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 4px;
+}
+
+.profile-topbar h1 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    margin-right: 36px; /* compensa el icon-btn de la izquierda para centrar bien el título */
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.icon-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--color-text);
+}
+
+.icon-btn:hover {
+    background-color: var(--color-primary-light);
+}
+
+/* ===== AVATAR ===== */
+
+.profile-avatar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.avatar-circle {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.avatar-circle img {
+    width: 52px;
+    height: 52px;
+    opacity: 0.85;
+}
+
+.avatar-circle.small {
+    width: 76px;
+    height: 76px;
+}
+
+.avatar-circle.small img {
+    width: 40px;
+    height: 40px;
+}
+
+.avatar-edit-badge {
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: 3px solid var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.avatar-edit-badge svg {
+    width: 13px;
+    height: 13px;
+    stroke: var(--color-white);
+}
+
+.profile-name {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 12px 0 2px;
+}
+
+.profile-subtitle {
+    font-size: 13px;
+    color: var(--color-text-light);
+}
+
+.profile-subtitle .level-highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ===== STAT CARDS ===== */
+
+.profile-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 20px;
+    margin: 22px 0;
+}
+
+.profile-stat-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.profile-stat-card .stat-val {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.profile-stat-card .stat-lbl {
+    font-size: 12px;
+    color: var(--color-text-light);
+    margin-top: 4px;
+}
+
+/* ===== MENU CARD (lista con chevrons) ===== */
+
+.profile-menu-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    margin: 0 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.profile-menu-item,
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+}
+
+.profile-menu-item:last-child,
+.settings-row:last-child {
+    border-bottom: none;
+}
+
+.profile-menu-item:hover,
+.settings-row:hover {
+    background-color: var(--color-bg);
+}
+
+.menu-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-item-left svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--color-text-light);
+    flex-shrink: 0;
+}
+
+.menu-item-left span,
+.settings-row .row-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chevron {
+    width: 16px;
+    height: 16px;
+    stroke: var(--color-text-light);
+    flex-shrink: 0;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+
+.logout-btn {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 26px 20px 0;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ===== SETTINGS (ajustes.html) ===== */
+
+.settings-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 22px 20px 8px;
+}
+
+.settings-list {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    margin: 0 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.settings-row .row-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.settings-row.danger .row-label {
+    color: var(--color-red);
+}
+
+/* toggle switch */
+
+.switch {
+    position: relative;
+    width: 42px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-border);
+    border-radius: 20px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(18px);
+}
+
+/* ===== FORM (editar-perfil.html) ===== */
+
+.profile-form {
+    padding: 24px 20px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+    background-color: var(--color-white);
+    color: var(--color-text);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-group.has-error input {
+    border-color: var(--color-red);
+}
+
+.field-error {
+    display: none;
+    font-size: 12px;
+    color: var(--color-red);
+    margin-top: 4px;
+}
+
+.form-group.has-error .field-error {
+    display: block;
+}
+
+.input-icon-wrap {
+    position: relative;
+}
+
+.input-icon-wrap svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    stroke: var(--color-text-light);
+}
+
+.interests-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 2px;
+}
+
+.interests-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    padding: 9px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chip.active {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.chip .check-icon {
+    display: none;
+    width: 13px;
+    height: 13px;
+    stroke: var(--color-primary-dark);
+}
+
+.chip.active .check-icon {
+    display: inline-block;
+}
+
+.save-link-btn {
+    display: block;
+    margin: 10px auto 0;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px 24px;
+}
+
+.save-link-btn:hover {
+    color: var(--color-primary-dark);
+}
+
+/* ===== CONFIRMATION VIEW ===== */
+
+.confirmation-view {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 90vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.confirmation-view.visible {
+    display: flex;
+}
+
+.confirm-check-circle {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.confirm-check-circle svg {
+    width: 40px;
+    height: 40px;
+    stroke: var(--color-primary);
+}
+
+.confirmation-view h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.confirmation-view p {
+    font-size: 13px;
+    color: var(--color-text-light);
+    max-width: 260px;
+    line-height: 1.5;
+    margin-bottom: 26px;
+}
+
+.confirm-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 13px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.deco-leaf {
+    position: absolute;
+    opacity: 0.35;
+}
+
+.deco-leaf.tl { top: 24px; left: 20px; width: 34px; }
+.deco-leaf.tr { top: 60px; right: 16px; width: 22px; }
+.deco-leaf.bl { bottom: 40px; left: 16px; width: 24px; }
+.deco-leaf.br { bottom: 20px; right: 24px; width: 34px; }
+
+/* ===== MODAL / BOTTOM SHEET ===== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.modal-overlay.visible {
+    display: flex;
+}
+
+.modal-sheet {
+    background-color: var(--color-white);
+    width: 100%;
+    max-width: 480px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 20px 20px 28px;
+    animation: sheet-up 0.2s ease-out;
+}
+
+@keyframes sheet-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-sheet h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.modal-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.modal-option:last-child {
+    border-bottom: none;
+}
+
+.modal-option .radio-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.modal-option.selected .radio-dot {
+    border-color: var(--color-primary);
+}
+
+.modal-option.selected .radio-dot::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.modal-field {
+    margin-bottom: 14px;
+}
+
+.modal-field input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.modal-btn.secondary {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.modal-btn.primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.modal-btn.danger {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.field-error-modal {
+    font-size: 12px;
+    color: var(--color-red);
+    margin-top: -8px;
+    margin-bottom: 12px;
+    display: none;
+}
+
+.field-error-modal.visible {
+    display: block;
+}
+
+/* ===== TOAST ===== */
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--color-text);
+    color: var(--color-white);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s;
+    z-index: 200;
+    max-width: 90%;
+    text-align: center;
+}
+
+.toast.error {
+    background-color: var(--color-red);
+}
+
+.toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 480px) {
+    .profile-stats-row {
+        gap: 10px;
+    }
+}

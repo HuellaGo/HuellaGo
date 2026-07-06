@@ -41,7 +41,7 @@
                     required
                 >
 
-                <a href="recover.html" class="forgot">
+                <a href="#" id="forgotPasswordLink" class="forgot">
                     ¿Olvidaste tu contraseña?
                 </a>
 
@@ -83,6 +83,24 @@
             >
 
         </div>
+
+    </div>
+
+</div>
+
+<!-- POPUP: SIMULACIÓN DE ENVÍO DE CONTRASEÑA -->
+
+<div class="forgot-modal-overlay" id="forgotModalOverlay">
+
+    <div class="forgot-modal">
+
+        <h3>¡Correo enviado!</h3>
+
+        <p id="forgotModalTexto">
+            Hemos enviado un enlace para restablecer tu contraseña a tu correo.
+        </p>
+
+        <button class="btn-primary" id="forgotModalCerrar">Entendido</button>
 
     </div>
 

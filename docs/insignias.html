@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuellaGo Dashboard</title>
+
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+<link rel="stylesheet" href="assets/styles/insignias.css">
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <div id="sidebar-container"></div>
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+            <div id="navbar-container"></div>
+
+            <div class="dashboard-content">
+                <div class="insignias-container">
+
+                    <section class="welcome">
+                        <div>
+                            <h1>Mis insignias</h1>
+                            <p>Tus eco puntos, tu nivel y los logros que has desbloqueado en el camino.</p>
+                        </div>
+                    </section>
+
+                    <!-- NOTIFICACIÓN DE ERROR (HU25) -->
+                    <div class="card info-box error-box" id="insigniasErrorBox" style="display:none;">
+                        <img src="assets/icons/info.png" alt="">
+                        <p id="insigniasErrorTexto"></p>
+                    </div>
+
+                    <!-- TABS -->
+
+                    <div class="insignias-tabs" role="tablist" aria-label="Panel de recompensas">
+                        <button class="tab-btn active-tab" id="tab-insignias" data-tab="insignias" role="tab"
+                            aria-selected="true">
+                            Insignias
+                        </button>
+                        <button class="tab-btn" id="tab-logros" data-tab="logros" role="tab" aria-selected="false">
+                            Logros
+                        </button>
+                    </div>
+
+                    <!-- TU PROGRESO (HU25 + HU26) -->
+
+                    <div class="ranking-card progreso-card">
+
+                        <h2>Tu progreso</h2>
+
+                        <div class="progreso-body">
+
+                            <div class="progreso-nivel-icon" id="nivelIcono">🛡️</div>
+
+                            <div class="progreso-info">
+                                <span class="progreso-label">Nivel actual</span>
+                                <h3 id="nivelNombre">—</h3>
+
+                                <div class="progreso-track">
+                                    <div class="progreso-fill" id="progresoFill"></div>
+                                </div>
+
+                                <span class="progreso-detalle" id="progresoDetalle">— / — para el siguiente nivel</span>
+                            </div>
+
+                            <div class="progreso-puntos">
+                                <span class="puntos-numero" id="puntosTotales">0</span>
+                                <span class="puntos-label">Eco puntos</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PANEL: INSIGNIAS -->
+
+                    <div id="panel-insignias" class="tab-panel">
+
+                        <div class="ranking-card">
+
+                            <h2 id="insigniasDesbloqueadasTitulo">Insignias desbloqueadas (0/0)</h2>
+
+                            <div class="insignias-grid" id="insigniasGridDesbloqueadas"></div>
+
+                        </div>
+
+                        <div class="ranking-card">
+
+                            <h2>Próximas insignias</h2>
+
+                            <div class="insignias-grid proximas" id="insigniasGridProximas"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PANEL: LOGROS -->
+
+                    <div id="panel-logros" class="tab-panel" style="display:none;">
+
+                        <div class="ranking-card">
+
+                            <h2>Historial de eco puntos</h2>
+
+                            <div id="logrosLista"></div>
+
+                            <div class="card info-box" id="logrosVacioBox" style="display:none;">
+                                <img src="assets/icons/info.png" alt="">
+                                <p>Aún no tienes recompensas registradas. ¡Completa tu primer reto para empezar a sumar
+                                    eco puntos!</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- TOASTS DE NOTIFICACIÓN (insignia desbloqueada / error) -->
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="assets/scripts/components.js"></script>
+    <script src="assets/scripts/huella-data.js"></script>
+    <script src="assets/scripts/retos-data.js"></script>
+    <script src="assets/scripts/insignias-data.js"></script>
+    <script src="assets/scripts/insignias.js"></script>
+    <div id="logout-modal-container"></div>
+</body>
+
+</html>

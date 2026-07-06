@@ -31,4 +31,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // ===== "¿Olvidaste tu contraseña?" (simulado, HU de recuperación) =====
+
+    const forgotLink = document.getElementById("forgotPasswordLink");
+    const forgotModal = document.getElementById("forgotModalOverlay");
+    const forgotModalTexto = document.getElementById("forgotModalTexto");
+    const forgotModalCerrar = document.getElementById("forgotModalCerrar");
+
+    if (forgotLink && forgotModal) {
+
+        forgotLink.addEventListener("click", (event) => {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+
+            forgotModalTexto.textContent = email
+                ? `Hemos enviado un enlace para restablecer tu contraseña a ${email}.`
+                : "Hemos enviado un enlace para restablecer tu contraseña a tu correo.";
+
+            forgotModal.classList.add("show");
+
+        });
+
+        forgotModalCerrar?.addEventListener("click", () => {
+            forgotModal.classList.remove("show");
+        });
+
+        forgotModal.addEventListener("click", (event) => {
+            if (event.target === forgotModal) {
+                forgotModal.classList.remove("show");
+            }
+        });
+
+    }
+
 });

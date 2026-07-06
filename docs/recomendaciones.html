@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recomendaciones IA | HuellaGo</title>
+
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+<link rel="stylesheet" href="assets/styles/recomendaciones.css">
+    <link rel="stylesheet" href="assets/styles/logout-modal.css">
+
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+
+            <div id="navbar-container"></div>
+
+            <div class="dashboard-content">
+
+                <!-- HERO -->
+
+                <section class="welcome reco-hero">
+
+                    <div class="reco-hero-info">
+
+                        <h1>Recomendaciones IA</h1>
+
+                        <p>
+                            Sugerencias personalizadas según tus hábitos actuales,
+                            ordenadas por el impacto que podrían tener en tu huella.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- BANNER PRIORITARIO (HU38) -->
+
+                <section class="reco-banner" id="bannerPrioritario" style="display: none;">
+
+                    <div class="reco-banner-icon">⚡</div>
+
+                    <div class="reco-banner-texto">
+                        <strong>Recomendación prioritaria</strong>
+                        <p id="bannerTexto"></p>
+                    </div>
+
+                    <button class="action-btn" id="bannerVerBtn">Ver</button>
+
+                </section>
+
+                <!-- SIN HÁBITOS REGISTRADOS -->
+
+                <section class="card info-box" id="sinHabitosCard" style="display: none;">
+                    <img src="assets/icons/info.png" alt="">
+                    <p>
+                        Todavía no has registrado tus hábitos. Completa tu huella en "Mi Huella" para recibir
+                        recomendaciones personalizadas.
+                    </p>
+                </section>
+
+                <div id="recoContenido" style="display: none;">
+
+                    <!-- TABS (HU40) -->
+
+                    <section class="reco-tabs">
+
+                        <button class="reco-tab active" data-tab="pendientes">Pendientes</button>
+                        <button class="reco-tab" data-tab="historial">Historial</button>
+
+                    </section>
+
+                    <!-- TOOLBAR -->
+
+                    <section class="reco-toolbar">
+
+                        <div class="search-box">
+
+                            <img src="assets/icons/buscar.png" alt="">
+
+                            <input type="text" id="searchInput" placeholder="Buscar recomendaciones...">
+
+                        </div>
+
+                        <div class="toolbar-actions">
+
+                            <div class="filter-wrapper">
+
+                                <button class="filter-btn" id="filterBtn">
+                                    <img src="assets/icons/filtro.png" alt="">
+                                    Filtro
+                                    <img src="assets/icons/flecha.png" alt="" class="arrow-down">
+                                </button>
+
+                                <div class="filter-dropdown" id="filterDropdown">
+
+                                    <label><input type="checkbox" value="Transporte" checked> Transporte</label>
+                                    <label><input type="checkbox" value="Energía" checked> Energía</label>
+                                    <label><input type="checkbox" value="Alimentación" checked> Alimentación</label>
+                                    <label><input type="checkbox" value="Residuos" checked> Residuos</label>
+
+                                </div>
+
+                            </div>
+
+                            <button class="sort-btn" id="sortBtn">
+                                <img src="assets/icons/ordenar.png" alt="">
+                                <span id="sortLabel">Mayor impacto</span>
+                                <img src="assets/icons/flecha.png" alt="" class="arrow-down">
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                    <!-- ESTADO VACÍO -->
+
+                    <section class="card info-box" id="estadoVacio" style="display: none;">
+                        <img src="assets/icons/check.png" alt="">
+                        <p id="estadoVacioTexto">
+                            ¡Vas muy bien! No tenemos recomendaciones nuevas por ahora según tus hábitos actuales.
+                        </p>
+                    </section>
+
+                    <!-- CARDS -->
+
+                    <section class="reco-grid" id="cardsContainer"></section>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL: VER EXPLICACIÓN (HU34) -->
+
+    <div class="modal-overlay" id="modalExplicacion">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+                <span class="reco-categoria" id="modalCategoria"></span>
+                <button class="modal-close" id="btnCerrarModal">&times;</button>
+            </div>
+
+            <h3 id="modalTitulo"></h3>
+
+            <p class="modal-impacto" id="modalImpacto"></p>
+
+            <p id="modalExplicacionTexto"></p>
+
+            <div class="reto-detalle-actions">
+                <button class="action-btn" id="modalMarcarBtn">Marcar como realizada</button>
+                <button class="action-btn green" id="modalConvertirBtn">Convertir en reto</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="assets/scripts/components.js"></script>
+    <script src="assets/scripts/huella-data.js"></script>
+    <script src="assets/scripts/retos-data.js"></script>
+    <script src="assets/scripts/insignias-data.js"></script>
+    <script src="assets/scripts/recomendaciones-data.js"></script>
+    <script src="assets/scripts/recomendaciones.js"></script>
+    <div id="logout-modal-container"></div>
+</body>
+
+</html>
